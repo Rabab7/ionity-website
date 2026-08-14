@@ -1,0 +1,51 @@
+:root {
+  /* Colors */
+  --color-background: #FFFFFF;
+  --color-surface: #F8F8F8;
+  --color-text: #111111;
+  --color-text-secondary: #5F6368;
+  --color-text-tertiary: #9AA0A6;
+  
+  /* Primary Accent - Fluorescent Lime (used strictly as an accent) */
+  --color-accent: #B8FF00;
+  --color-accent-dark: #8DBA00;
+  --color-accent-glow: rgba(184, 255, 0, 0.15);
+  
+  --color-border: #E8E8E8;
+  --color-dark: #0A0A0A;
+  --color-dark-surface: #1A1A1A;
+  
+  /* Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-arabic: 'Tajawal', 'Cairo', system-ui, -apple-system, sans-serif;
+  
+  /* Logical Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  --spacing-2xl: 8rem;
+  --spacing-section: clamp(4rem, 8vw, 8rem);
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s ease;
+  --transition-smooth: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Layout */
+  --container-max: 1280px;
+  --container-wide: 1440px;
+}
+
+/* RTL Specific Tokens */
+html[dir="rtl"] {
+  --font-primary: var(--font-arabic);
+}
