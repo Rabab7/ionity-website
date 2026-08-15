@@ -703,7 +703,7 @@ html,
 #fullpage,
 .fp-section,
 .fp-slide {
-    background: #ffffff !important;
+    background: #f7f5f2 !important;
 }
 
 .sliderSection,
@@ -714,14 +714,14 @@ html,
 .teamSection,
 .contactSection,
 .section {
-    background: #ffffff !important;
+    background: #f7f5f2 !important;
     filter: none !important;
 }
 
 /* Kill the dark gradient transitions that caused grey boxes */
 .sliderSection,
 .premiumSection {
-    background: #ffffff !important;
+    background: #f7f5f2 !important;
     background-image: none !important;
 }
 
@@ -835,7 +835,7 @@ body.lang-ar .sidebar {
     stroke: #155B51 !important;
 }
 .menuMobilePopup {
-    background: #f8f8f8 !important;
+    background: #eeecea !important;
 }
 .menuMobilePopup a,
 .menuMobilePopup li a {
@@ -872,9 +872,9 @@ hr, .divider, .separator {
 .iconBlock,
 .pluginItem,
 .card {
-    background: #f5f5f5 !important;
-    border: 1px solid #e0e0e0 !important;
-    color: #1a1a1a !important;
+    background: #eeecea !important;
+    border: 1px solid #ddd9d4 !important;
+    color: #1e1e1e !important;
 }
 /* FullPage nav dots */
 #fp-nav ul li a span,
@@ -890,9 +890,9 @@ hr, .divider, .separator {
 input,
 textarea,
 select {
-    background: #f5f5f5 !important;
-    border: 1px solid #e0e0e0 !important;
-    color: #1a1a1a !important;
+    background: #eeecea !important;
+    border: 1px solid #ddd9d4 !important;
+    color: #1e1e1e !important;
 }
 input:focus,
 textarea:focus {
@@ -970,14 +970,20 @@ textarea:focus {
 }
 
 .team-member-card .member-photo {
-    width: 75px;
-    height: 75px;
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
-    background-size: cover;
-    background-position: center;
-    border: 3px solid rgba(21, 91, 81, 0.25);
-    box-shadow: 0 4px 12px rgba(21, 91, 81, 0.1);
+    background-size: cover !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    border: 3px solid rgba(21, 91, 81, 0.3);
+    box-shadow: 0 4px 14px rgba(21, 91, 81, 0.15);
     transition: all 0.3s ease;
+    overflow: hidden;
+    /* Fallback if background-image fails */
+    display: block;
+    min-width: 85px;
+    min-height: 85px;
 }
 
 .team-member-card:hover .member-photo {
