@@ -690,22 +690,18 @@ body.lang-ar .about-us-container .about-desc {
     font-size: 20px;
 }
 
-
 /* =============================================================
-   LIGHT THEME OVERRIDES (Tasks 2â€“5)
-   All dark muffin.css rules are overridden here.
+   LIGHT WARM THEME — Full Color System Override
+   Palette: Background #f7f5f2 | Surface #eeecea | Brand #155B51
    DO NOT MODIFY muffin.css directly.
    ============================================================= */
 
-/* â”€â”€ Task 2: Remove All Grey/Dark Section Backgrounds â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── 1. Universal Background Reset ─────────────────────────── */
 body,
 html,
 #fullpage,
 .fp-section,
-.fp-slide {
-    background: #f7f5f2 !important;
-}
-
+.fp-slide,
 .sliderSection,
 .whySection,
 .clientsSection,
@@ -713,24 +709,48 @@ html,
 .premiumSection,
 .teamSection,
 .contactSection,
-.section {
-    background: #f7f5f2 !important;
-    filter: none !important;
-}
-
-/* Kill the dark gradient transitions that caused grey boxes */
-.sliderSection,
-.premiumSection {
+.whoSection,
+.section,
+.wrapper,
+.muffin {
     background: #f7f5f2 !important;
     background-image: none !important;
+    filter: none !important;
+    color: #1e1e1e !important;
 }
 
-.wrapper,
-.inner {
+/* Transparent wrappers */
+.inner,
+.fp-tableCell {
     background: transparent !important;
 }
 
-/* â”€â”€ Task 3: Text Colors â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── 2. whoSection (Team Section) Fix ──────────────────────── */
+.whoSection {
+    background: #f7f5f2 !important;
+}
+.whoSection h2,
+.whoSection .columns .leftColumn .rowContainer .desc,
+.whoSection .columns .rightColumn .rowContainer .desc,
+.whoSection .team .column .role,
+.whoSection .team .column .name {
+    color: #1e1e1e !important;
+}
+.whoSection .team .column .columnContainer img {
+    filter: grayscale(20%) !important;
+    border-radius: 50%;
+}
+/* Team photos on dark SVG circles — make them light */
+.whoSection .team .column .columnContainer svg circle,
+.whoSection .team .column .columnContainer svg ellipse {
+    fill: #e8e4df !important;
+    stroke: #ddd9d4 !important;
+}
+.whoSection .team .column .columnContainer svg path {
+    stroke: #155B51 !important;
+}
+
+/* ── 3. Text Colors ────────────────────────────────────────── */
 .sliderSection h1, .sliderSection h2, .sliderSection h3,
 .sliderSection p, .sliderSection span, .sliderSection li,
 .whySection h1, .whySection h2, .whySection h3,
