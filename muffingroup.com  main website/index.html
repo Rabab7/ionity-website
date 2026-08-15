@@ -471,86 +471,95 @@
                     <div class="wrapper">
                         <div class="laser-stats-container" data-parallax='{"y": -40}'>
                             <div class="laser-background">
-                                <!-- Desktop SVG: beams travel from left edge through stats -->
-                                <svg class="laser-svg desktop-svg" viewBox="0 0 1200 450" preserveAspectRatio="xMidYMid slice">
+                                <!-- Desktop SVG: beams travel from beyond left edge through stats to beyond right edge -->
+                                <svg class="laser-svg desktop-svg" viewBox="0 0 1200 450" preserveAspectRatio="xMidYMid slice" style="overflow: visible;">
                                     <defs>
-                                        <filter id="glow-brand-d" x="-40%" y="-40%" width="180%" height="180%">
-                                            <feGaussianBlur stdDeviation="10" result="blur" />
+                                        <filter id="glow-brand-d" x="-50%" y="-50%" width="200%" height="200%">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1" />
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur2" />
                                             <feMerge>
-                                                <feMergeNode in="blur" />
+                                                <feMergeNode in="blur2" />
+                                                <feMergeNode in="blur1" />
                                                 <feMergeNode in="SourceGraphic" />
                                             </feMerge>
                                         </filter>
-                                        <filter id="glow-light-d" x="-40%" y="-40%" width="180%" height="180%">
-                                            <feGaussianBlur stdDeviation="7" result="blur" />
+                                        <filter id="glow-light-d" x="-50%" y="-50%" width="200%" height="200%">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur1" />
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2" />
                                             <feMerge>
-                                                <feMergeNode in="blur" />
+                                                <feMergeNode in="blur2" />
+                                                <feMergeNode in="blur1" />
                                                 <feMergeNode in="SourceGraphic" />
                                             </feMerge>
                                         </filter>
-                                        <!-- Beam 1: primary brand #155B51 -->
+                                        <!-- Beam 1: primary brand #155B51 with radiant teal pulse -->
                                         <linearGradient id="beam-brand-d" x1="0%" y1="0%" x2="100%" y2="0%">
                                             <stop offset="0%" stop-color="#155B51" stop-opacity="0" />
-                                            <stop offset="35%" stop-color="#155B51" stop-opacity="0.9" />
-                                            <stop offset="65%" stop-color="#155B51" stop-opacity="0.9" />
+                                            <stop offset="25%" stop-color="#228a7b" stop-opacity="0.95" />
+                                            <stop offset="50%" stop-color="#155B51" stop-opacity="1" />
+                                            <stop offset="75%" stop-color="#155B51" stop-opacity="0.85" />
                                             <stop offset="100%" stop-color="#155B51" stop-opacity="0" />
                                         </linearGradient>
-                                        <!-- Beam 2: lighter #1d7a6a -->
+                                        <!-- Beam 2: lighter vibrant #2aa897 -->
                                         <linearGradient id="beam-light-d" x1="0%" y1="0%" x2="100%" y2="0%">
-                                            <stop offset="0%" stop-color="#1d7a6a" stop-opacity="0" />
-                                            <stop offset="35%" stop-color="#1d7a6a" stop-opacity="0.7" />
-                                            <stop offset="65%" stop-color="#1d7a6a" stop-opacity="0.7" />
+                                            <stop offset="0%" stop-color="#2aa897" stop-opacity="0" />
+                                            <stop offset="30%" stop-color="#2aa897" stop-opacity="0.85" />
+                                            <stop offset="60%" stop-color="#1d7a6a" stop-opacity="0.8" />
                                             <stop offset="100%" stop-color="#1d7a6a" stop-opacity="0" />
                                         </linearGradient>
                                     </defs>
                                     <!-- Faint guide path -->
-                                    <path d="M 0,55 C 280,10 560,210 700,280 C 860,370 1060,290 1200,375" fill="none" stroke="rgba(21,91,81,0.08)" stroke-width="2"/>
-                                    <!-- Beam 1: from left edge (x=0) with brand color -->
+                                    <path d="M -250,0 C 150,-30 520,180 690,260 C 860,360 1100,280 1450,430" fill="none" stroke="rgba(21,91,81,0.06)" stroke-width="2"/>
+                                    <!-- Beam 1: from outside screen with brand color -->
                                     <path class="laser-beam b-1" filter="url(#glow-brand-d)"
-                                        d="M 0,55 C 280,10 560,210 700,280 C 860,370 1060,290 1200,375"
+                                        d="M -250,0 C 150,-30 520,180 690,260 C 860,360 1100,280 1450,430"
                                         fill="none" stroke="url(#beam-brand-d)" stroke-width="5" stroke-linecap="round" />
-                                    <!-- Beam 2: parallel path, lighter green -->
+                                    <!-- Beam 2: parallel offset path, lighter green -->
                                     <path class="laser-beam b-2" filter="url(#glow-light-d)"
-                                        d="M 0,75 C 270,25 545,225 690,295 C 850,385 1055,305 1200,392"
+                                        d="M -250,25 C 140,0 500,200 680,280 C 850,380 1090,300 1450,450"
                                         fill="none" stroke="url(#beam-light-d)" stroke-width="3" stroke-linecap="round" />
                                 </svg>
 
-                                <!-- Mobile SVG: vertical beams top-to-bottom through stacked stats -->
-                                <svg class="laser-svg mobile-svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice">
+                                <!-- Mobile SVG: vertical beams top-to-bottom from outside viewport -->
+                                <svg class="laser-svg mobile-svg" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice" style="overflow: visible;">
                                     <defs>
                                         <filter id="glow-brand-m" x="-40%" y="-40%" width="180%" height="180%">
-                                            <feGaussianBlur stdDeviation="8" result="blur" />
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur1" />
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur2" />
                                             <feMerge>
-                                                <feMergeNode in="blur" />
+                                                <feMergeNode in="blur2" />
+                                                <feMergeNode in="blur1" />
                                                 <feMergeNode in="SourceGraphic" />
                                             </feMerge>
                                         </filter>
                                         <filter id="glow-light-m" x="-40%" y="-40%" width="180%" height="180%">
-                                            <feGaussianBlur stdDeviation="6" result="blur" />
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur1" />
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur2" />
                                             <feMerge>
-                                                <feMergeNode in="blur" />
+                                                <feMergeNode in="blur2" />
+                                                <feMergeNode in="blur1" />
                                                 <feMergeNode in="SourceGraphic" />
                                             </feMerge>
                                         </filter>
                                         <linearGradient id="beam-brand-m" x1="0%" y1="0%" x2="0%" y2="100%">
                                             <stop offset="0%" stop-color="#155B51" stop-opacity="0" />
-                                            <stop offset="40%" stop-color="#155B51" stop-opacity="0.9" />
-                                            <stop offset="65%" stop-color="#155B51" stop-opacity="0.9" />
+                                            <stop offset="30%" stop-color="#228a7b" stop-opacity="0.95" />
+                                            <stop offset="60%" stop-color="#155B51" stop-opacity="0.9" />
                                             <stop offset="100%" stop-color="#155B51" stop-opacity="0" />
                                         </linearGradient>
                                         <linearGradient id="beam-light-m" x1="0%" y1="0%" x2="0%" y2="100%">
-                                            <stop offset="0%" stop-color="#1d7a6a" stop-opacity="0" />
-                                            <stop offset="40%" stop-color="#1d7a6a" stop-opacity="0.7" />
-                                            <stop offset="65%" stop-color="#1d7a6a" stop-opacity="0.7" />
+                                            <stop offset="0%" stop-color="#2aa897" stop-opacity="0" />
+                                            <stop offset="35%" stop-color="#2aa897" stop-opacity="0.85" />
+                                            <stop offset="65%" stop-color="#1d7a6a" stop-opacity="0.75" />
                                             <stop offset="100%" stop-color="#1d7a6a" stop-opacity="0" />
                                         </linearGradient>
                                     </defs>
-                                    <path d="M 0,40 C 120,160 300,200 200,400 C 100,610 310,660 400,820" fill="none" stroke="rgba(21,91,81,0.08)" stroke-width="2"/>
+                                    <path d="M -80,-80 C 100,120 340,170 200,380 C 60,590 340,630 480,920" fill="none" stroke="rgba(21,91,81,0.06)" stroke-width="2"/>
                                     <path class="laser-beam-m b-1-m" filter="url(#glow-brand-m)"
-                                        d="M 0,40 C 120,160 300,200 200,400 C 100,610 310,660 400,820"
-                                        fill="none" stroke="url(#beam-brand-m)" stroke-width="4" stroke-linecap="round" />
+                                        d="M -80,-80 C 100,120 340,170 200,380 C 60,590 340,630 480,920"
+                                        fill="none" stroke="url(#beam-brand-m)" stroke-width="4.5" stroke-linecap="round" />
                                     <path class="laser-beam-m b-2-m" filter="url(#glow-light-m)"
-                                        d="M 15,55 C 130,175 310,215 210,415 C 110,625 320,672 400,835"
+                                        d="M -60,-60 C 120,140 350,190 210,400 C 80,610 350,650 480,940"
                                         fill="none" stroke="url(#beam-light-m)" stroke-width="2.5" stroke-linecap="round" />
                                 </svg>
                             </div>
@@ -571,6 +580,42 @@
                         <div class="about-us-container" data-parallax='{"y": -20}'>
                             <h2 class="about-title">Who we are</h2>
                             <p class="about-desc">We are a professional team specializing in developing digital systems, web applications, and innovative SaaS solutions. We integrate the latest technologies with exceptional user experience to empower companies to scale and grow.</p>
+                            
+                            <!-- Team members grid under description -->
+                            <div class="about-team-grid">
+                                <div class="team-member-card">
+                                    <div class="member-photo" style="background-image: url(assets/images/Konrad.jpg)"></div>
+                                    <div class="member-name">Konrad</div>
+                                </div>
+                                <div class="team-member-card">
+                                    <div class="member-photo" style="background-image: url(assets/images/Marcin.jpg)"></div>
+                                    <div class="member-name">Marcin</div>
+                                </div>
+                                <div class="team-member-card">
+                                    <div class="member-photo" style="background-image: url(assets/images/Albert.jpg)"></div>
+                                    <div class="member-name">Albert</div>
+                                </div>
+                                <div class="team-member-card">
+                                    <div class="member-photo" style="background-image: url(assets/images/Lukasz.jpg)"></div>
+                                    <div class="member-name">Łukasz</div>
+                                </div>
+                                <div class="team-member-card">
+                                    <div class="member-photo" style="background-image: url(assets/images/Bartek.jpg)"></div>
+                                    <div class="member-name">Bartek</div>
+                                </div>
+                                <div class="team-member-card">
+                                    <div class="member-photo" style="background-image: url(assets/images/Filip.jpg)"></div>
+                                    <div class="member-name">Phil</div>
+                                </div>
+                                <div class="team-member-card">
+                                    <div class="member-photo" style="background-image: url(assets/images/Piotrek.jpg)"></div>
+                                    <div class="member-name">Piotrek</div>
+                                </div>
+                                <div class="team-member-card">
+                                    <div class="member-photo" style="background-image: url(assets/images/Michal.jpg)"></div>
+                                    <div class="member-name">Michał</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

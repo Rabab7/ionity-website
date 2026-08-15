@@ -1,22 +1,27 @@
-$(window).ready(function() {
+/**
+ * IONITY — Main Setup & Controller
+ * File: assets/js/main.js
+ * 
+ * Handles preloader, fullpage.js initialization, smooth scrolling, and mobile menus.
+ */
 
+$(document).ready(function() {
+    'use strict';
+
+    /* 1. Preloader Initial State */
     $(".preloaderWindow .logo").addClass("show");
     $(".preloaderWindow .line").addClass("show");
     $(".preloaderWindow .text").addClass("show");
 
     $(window).resize();
 
-    // var path = document.querySelector('.numberPlus');
-    // alert(path.getTotalLength());
-
+    /* 2. Fullpage.js Initialization */
     $('#fullpage').fullpage({
         autoScrolling: false,
         fitToSection: false,
         menu: '#menu',
         anchors: ['homePage', 'whyPage', 'clientsPage', 'websitesPage', 'premiumPage', 'whoPage', 'contactPage'],
         onLeave: function(index, nextIndex, direction) {
-            var leavingSection = $(this);
-
             if (index == 1 && direction == 'down') {
                 $('.hamburger').addClass("active");
             } else if (index == 2 && direction == 'up') {
@@ -25,6 +30,7 @@ $(window).ready(function() {
         }
     });
 
+    /* 3. Smooth Scrolling (Local Nav) */
     var body = $("html, body");
 
     $('.scrollDown a').click(function() {
@@ -38,56 +44,7 @@ $(window).ready(function() {
         return false;
     });
 
-    muffinSlider = $('.muffinSlider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        swipeToSlide: false,
-        focusOnSelect: false,
-        arrows: true,
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        fade: true,
-        pauseOnFocus: false,
-        pauseOnHover: false
-    });
-
-    $('.goToPrev').click(function() {
-        $('.muffinSlider .slick-prev').click();
-    });
-
-    $('.goToNext').click(function() {
-        $('.muffinSlider .slick-next').click();
-    });
-
-    $('.goTo3Slide').click(function() {
-        muffinSlider.slick('slickGoTo', 2);
-    });
-
-    var quoteSlider = $('.quoteSlider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        swipeToSlide: false,
-        focusOnSelect: true,
-        arrows: true,
-        dots: false,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        fade: true,
-        pauseOnFocus: false,
-        pauseOnHover: false,
-        responsive: [{
-            breakpoint: 600,
-            settings: {
-                arrows: false
-            }
-        }]
-    });
-
-    // mobile menu
-
+    /* 4. Mobile Menu */
     $(".hamburger").click(function() {
         $(".menuMobilePopup").show(0);
         $(".menuMobilePopup").animate({
@@ -104,23 +61,12 @@ $(window).ready(function() {
         $(".menuMobilePopup").delay(200).hide(0);
     });
 
-    // quote slider
-
-    $('a[data-slide]').click(function(e) {
-        e.preventDefault();
-        var slideno = $(this).data('slide');
-        $('.quoteSlider').slick('slickGoTo', slideno - 1);
-    });
-
-
-
 });
 
+/* 5. Preloader Hide on Load */
 $(window).on('load', function() {
-
     $(".preloaderWindow .logo").removeClass("show");
     $(".preloaderWindow .line").removeClass("show");
     $(".preloaderWindow .text").removeClass("show");
     $(".preloaderWindow").addClass("hide");
-
 });

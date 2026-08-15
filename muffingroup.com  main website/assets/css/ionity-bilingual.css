@@ -901,10 +901,155 @@ textarea:focus {
     box-shadow: 0 0 0 3px rgba(21, 91, 81, 0.15) !important;
 }
 
-/* â”€â”€ Task 7: About Us Section â€” Light Theme â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Laser Animation Enhanced ───────────────────────────────── */
+.laser-beam, .laser-beam-m {
+    stroke-dasharray: 1200 2400;
+    animation: drawBeam 8.5s linear infinite;
+}
+
+.b-1, .b-1-m {
+    animation-delay: 0s;
+    animation-duration: 8.5s;
+}
+
+.b-2, .b-2-m {
+    animation-delay: -4.25s;
+    animation-duration: 10.5s;
+    stroke-dasharray: 1400 2200;
+}
+
+@keyframes drawBeam {
+    from { stroke-dashoffset: 4600; }
+    to   { stroke-dashoffset: -4600; }
+}
+
+/* ── About Us Section & Team Members Grid ───────────────────── */
+.about-us-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 30px auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
 .about-us-container .about-title {
     color: #155B51 !important;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
 }
+
 .about-us-container .about-desc {
+    color: #444444 !important;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.about-team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.team-member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.team-member-card:hover {
+    transform: translateY(-6px);
+}
+
+.team-member-card .member-photo {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 3px solid rgba(21, 91, 81, 0.25);
+    box-shadow: 0 4px 12px rgba(21, 91, 81, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-member-card:hover .member-photo {
+    border-color: #155B51;
+    box-shadow: 0 8px 20px rgba(21, 91, 81, 0.25);
+    transform: scale(1.05);
+}
+
+.team-member-card .member-name {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #222222 !important;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .about-team-grid {
+        gap: 14px;
+    }
+    .team-member-card .member-photo {
+        width: 60px;
+        height: 60px;
+    }
+    .team-member-card .member-name {
+        font-size: 0.8rem;
+    }
+}
+
+/* ── Contact Section & Footer Text Overrides (Fix Hidden White Text) ── */
+.contactSection,
+.contactSection .wrapper,
+.contactSection .columns {
+    color: #1a1a1a !important;
+}
+
+.contactSection h2 {
+    color: #155B51 !important;
+}
+
+.contactSection .columns .column .title,
+.contactSection .columns .column .title div {
+    color: #1a1a1a !important;
+    font-weight: 700;
+}
+
+.contactSection .links {
+    padding: 100px 0 60px !important;
+}
+
+.contactSection .links .column a {
+    color: #1a1a1a !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    transition: color 0.2s ease;
+}
+
+.contactSection .links .column a:hover {
+    color: #155B51 !important;
+}
+
+.contactSection .copyright {
     color: #555555 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    padding-bottom: 40px !important;
+}
+
+.contactSection .copyright a {
+    color: #155B51 !important;
+}
+
+.contactSection .copyright a:hover {
+    color: #1d7a6a !important;
 }
