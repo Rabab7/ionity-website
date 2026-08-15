@@ -1,0 +1,910 @@
+/*
+ * ============================================================
+ *  IONITY — Master Bilingual Layer  (Arabic ↔ English)
+ *  File: assets/css/ionity-bilingual.css
+ * ============================================================
+ */
+
+/* 1. Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* 2. Base Fonts */
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+body.lang-ar,
+body.lang-ar * {
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* Keep code/number/icon fonts intact */
+body.lang-ar code,
+body.lang-ar pre,
+body.lang-ar svg text {
+    font-family: inherit;
+}
+
+/* 3. Typography Adjustments for Arabic */
+body.lang-ar h1,
+body.lang-ar h2,
+body.lang-ar h3,
+body.lang-ar h4,
+body.lang-ar h5,
+body.lang-ar h6 {
+    line-height: 1.45;
+    letter-spacing: 0;
+}
+
+body.lang-ar p {
+    line-height: 1.75;
+    letter-spacing: 0;
+}
+
+/* 4. Desktop Sidebar Mirroring (>= 990px) */
+@media screen and (min-width: 990px) {
+    body.lang-ar .sidebar {
+        left: auto !important;
+        right: 0 !important;
+        transition: left 0.35s ease, right 0.35s ease;
+    }
+
+    body.lang-ar .muffin {
+        padding-left: 0 !important;
+        padding-right: 190px !important;
+        transition: padding 0.35s ease;
+    }
+
+    /* Sidebar Menu Container */
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer {
+        margin-left: 0 !important;
+        margin-right: 42px !important;
+    }
+
+    /* Vertical line border */
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer .border {
+        left: auto !important;
+        right: 0 !important;
+    }
+
+    /* Dot circle on the line */
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer ul li a .circle {
+        left: auto !important;
+        right: -20px !important;
+    }
+
+    /* Active lime pill line */
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer ul li a .line {
+        right: auto !important;
+        left: -40px !important;
+    }
+
+    /* Sidebar links text */
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer ul li {
+        padding: 0 15px 30px 20px !important;
+    }
+
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer ul li a {
+        direction: rtl !important;
+        text-align: right !important;
+        padding-right: 5px !important;
+        padding-left: 0 !important;
+    }
+
+    /* Desktop Headings & Content Alignments */
+    body.lang-ar .muffinSlider .muffinSlide .headline {
+        text-align: right;
+        direction: rtl;
+    }
+
+    body.lang-ar .muffinSlider .muffinSlide .headline .button,
+    body.lang-ar .muffinSlider .muffinSlide .headline .btn-wrapper {
+        text-align: right;
+    }
+
+    /* Websites section desktop RTL */
+    body.lang-ar .websitesSection .content {
+        direction: rtl;
+        text-align: right;
+        float: right;
+    }
+
+    body.lang-ar .websitesSection .photoBg {
+        left: 0 !important;
+        right: auto !important;
+    }
+}
+
+/* 5. Large Tablet Breakpoint (768px - 989px) */
+@media screen and (min-width: 768px) and (max-width: 989px) {
+    body.lang-ar .sidebar {
+        left: auto !important;
+        right: 0 !important;
+        width: 160px !important;
+    }
+
+    body.lang-ar .muffin {
+        padding-left: 0 !important;
+        padding-right: 160px !important;
+    }
+
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer {
+        margin-left: 0 !important;
+        margin-right: 30px !important;
+    }
+
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer .border {
+        left: auto !important;
+        right: -2px !important;
+    }
+
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer ul li a .circle {
+        left: auto !important;
+        right: -20px !important;
+    }
+
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer ul li a .line {
+        right: auto !important;
+        left: -25px !important;
+    }
+
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer ul li a {
+        direction: rtl !important;
+        text-align: right !important;
+    }
+}
+
+/* 6. Small Tablet Breakpoint (600px - 767px) */
+@media screen and (min-width: 600px) and (max-width: 767px) {
+    body.lang-ar .sidebar {
+        left: auto !important;
+        right: 0 !important;
+        width: 80px !important;
+    }
+
+    body.lang-ar .muffin {
+        padding-left: 0 !important;
+        padding-right: 80px !important;
+    }
+
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer {
+        margin-left: 0 !important;
+        margin-right: 40px !important;
+    }
+
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer .border {
+        left: auto !important;
+        right: -2px !important;
+    }
+
+    body.lang-ar .sidebar #menu .menuMiddle .menuContainer ul li a .circle {
+        left: auto !important;
+        right: -20px !important;
+    }
+}
+
+/* 7. Mobile Breakpoint (< 600px) */
+@media screen and (max-width: 599px) {
+    body.lang-ar .sidebar,
+    .sidebar {
+        display: none !important;
+    }
+
+    body.lang-ar .muffin,
+    .muffin {
+        padding: 0 !important;
+    }
+
+    /* Mobile Header */
+    .menuMobile {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 18px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: rgba(17, 17, 17, 0.95);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    body.lang-ar .menuMobile {
+        direction: ltr; /* keep logo left, actions right */
+    }
+
+    .menuMobile .logo {
+        padding: 0;
+    }
+
+    .menuMobile .mobileHeaderActions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-right: 45px; /* space for hamburger */
+    }
+
+    .mobile-header-lang-btn {
+        background: transparent;
+        border: 1px solid #333333;
+        color: #B8FF00;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 12px;
+        cursor: pointer;
+        outline: none;
+        transition: 0.2s;
+    }
+
+    .mobile-header-lang-btn:hover {
+        border-color: #B8FF00;
+        background: rgba(184, 255, 0, 0.1);
+    }
+
+    .hamburger {
+        top: 10px !important;
+        right: 15px !important;
+        z-index: 10000;
+    }
+
+    /* Mobile Hero Layout */
+    .muffinSlider .muffinSlide .headline {
+        padding: 85px 0 25px 0 !important;
+        text-align: center !important;
+    }
+
+    body.lang-ar .muffinSlider .muffinSlide .headline {
+        text-align: center !important;
+        direction: rtl;
+    }
+
+    .muffinSlider .muffinSlide .headline h1 {
+        font-size: 24px !important;
+        line-height: 1.4 !important;
+        padding: 0 10px;
+    }
+
+    .muffinSlider .muffinSlide .headline .button,
+    .muffinSlider .muffinSlide .headline .btn-wrapper {
+        text-align: center !important;
+        padding: 15px 0 0 0 !important;
+    }
+
+    .muffinSlider .muffinSlide .headline .btn-wrapper a,
+    .muffinSlider .muffinSlide .headline .button a {
+        display: inline-block !important;
+        margin: 0 auto;
+    }
+
+    .muffinSlider .slideImage {
+        padding-top: 10px;
+    }
+
+    .muffinSlider .slideImage img {
+        max-width: 95%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    body.lang-ar .clientsSection .headline {
+        direction: rtl;
+        text-align: center;
+    }
+
+    body.lang-ar .websitesSection .content {
+        text-align: center !important;
+    }
+}
+
+/* 8. Slider Navigation Numbers (Always LTR to preserve slide direction) */
+.muffinSlider .muffinSlide .navigation {
+    direction: ltr !important;
+}
+
+body.lang-ar .muffinSlider .muffinSlide .navigation .name {
+    direction: rtl;
+    text-align: right;
+}
+
+/* 9. Sidebar Language Toggle Button (Desktop) */
+.lang-toggle {
+    position: absolute;
+    bottom: 95px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 200;
+}
+
+.lang-toggle button {
+    background: transparent;
+    border: 1px solid #333333;
+    color: #888888;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-transform: uppercase;
+}
+
+.lang-toggle button:hover {
+    border-color: #B8FF00;
+    color: #B8FF00;
+    box-shadow: 0 0 10px rgba(184, 255, 0, 0.2);
+}
+
+/* 10. Mobile Menu Popup Language Toggle */
+.mobile-lang-switch {
+    text-align: center;
+    padding: 20px 0 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 15px;
+}
+
+.mobile-lang-switch .lang-btn {
+    background: rgba(184, 255, 0, 0.1);
+    border: 1px solid #B8FF00;
+    color: #B8FF00;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mobile-lang-switch .lang-btn:hover {
+    background: #B8FF00;
+    color: #111111;
+}
+
+/* 11. Why Section RTL Mirroring */
+body.lang-ar .whySection .whyTable {
+    direction: rtl; 
+}
+body.lang-ar .whySection .whyTable .whyColumnLeft h2 {
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+}
+body.lang-ar .whySection .whyTable .whyColumnCenter {
+    text-align: right;
+}
+body.lang-ar .whySection .leftSvg {
+    left: auto !important;
+    right: 0 !important;
+    transform: scaleX(-1);
+}
+body.lang-ar .whySection .rightPhoto {
+    right: auto !important;
+    left: -460px !important;
+}
+body.lang-ar .whySection .icons .iconRow.middle {
+    padding-left: 0 !important;
+    padding-right: 20px;
+}
+body.lang-ar .whySection .icons .iconRow .title {
+    padding-left: 0 !important;
+    padding-right: 30px;
+}
+
+@media screen and (max-width: 1199px) {
+    body.lang-ar .whySection .icons .iconRow.middle {
+        padding-right: 13px !important;
+    }
+    body.lang-ar .whySection .icons .iconRow .title {
+        padding-right: 15px !important;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    body.lang-ar .whySection .whyTable .whyColumnLeft h2 {
+        text-align: center !important;
+    }
+    body.lang-ar .whySection .icons .iconRow:first-of-type,
+    body.lang-ar .whySection .icons .iconRow:nth-child(4) {
+        padding-left: 0 !important;
+        padding-right: 40px !important;
+    }
+    body.lang-ar .whySection .icons .iconRow:nth-child(2),
+    body.lang-ar .whySection .icons .iconRow:nth-child(3) {
+        padding-left: 0 !important;
+        padding-right: 83px !important;
+    }
+    body.lang-ar .whySection .icons .iconRow .title {
+        padding-right: 10px !important;
+    }
+}
+
+/* 12. Clients / Testimonials Section RTL */
+body.lang-ar .clientsSection .headlineTop,
+body.lang-ar .clientsSection .headlineBottom {
+    direction: rtl;
+}
+
+body.lang-ar .clientsSection .subTitle {
+    direction: rtl;
+    text-align: center;
+}
+
+body.lang-ar .clientsSection .quoteSlider .quote .quoteContainer {
+    direction: rtl;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* 13. Websites Section RTL */
+body.lang-ar .websitesSection .content .title {
+    direction: rtl;
+    line-height: 1.5;
+}
+
+/* 14. Premium Solutions Section RTL */
+body.lang-ar .premiumSection .headline h2 {
+    direction: rtl;
+    text-align: center;
+}
+
+body.lang-ar .premiumSection .items .item .desc {
+    direction: rtl;
+    line-height: 1.4;
+}
+
+/* 15. Who We Are Section RTL */
+body.lang-ar .whoSection h2 {
+    direction: rtl;
+    text-align: center;
+}
+
+body.lang-ar .whoSection .leftColumn .desc,
+body.lang-ar .whoSection .rightColumn .desc {
+    direction: rtl;
+    text-align: center;
+    line-height: 1.5;
+}
+
+body.lang-ar .whoSection .centerColumn .columnContainer {
+    direction: rtl;
+    text-align: justify;
+    line-height: 1.85;
+    font-size: 16px;
+}
+
+/* 16. Contact Section RTL */
+body.lang-ar .contactSection h2 {
+    direction: rtl;
+    text-align: center;
+}
+
+body.lang-ar .contactSection .columns .column .title div {
+    direction: rtl;
+    text-align: center;
+}
+
+body.lang-ar .contactSection .links .column a {
+    direction: rtl;
+}
+
+body.lang-ar .contactSection .links .column a .icon {
+    margin-right: 0 !important;
+    margin-left: 10px !important;
+}
+
+body.lang-ar .contactSection .links .column a .arrow {
+    margin-left: 0 !important;
+    margin-right: 10px !important;
+    transform: scaleX(-1);
+}
+
+body.lang-ar .contactSection .copyright {
+    direction: rtl;
+    text-align: center;
+}
+
+/* 17. Forms & Inputs RTL */
+body.lang-ar input[type="text"],
+body.lang-ar input[type="email"],
+body.lang-ar input[type="tel"],
+body.lang-ar textarea {
+    direction: rtl;
+    text-align: right;
+}
+
+body.lang-ar .contactSection .column .text p {
+    direction: rtl;
+    text-align: right;
+}
+
+/* 18. Preloader and Brand Logo Always LTR */
+.logo,
+.logo span,
+.preloaderWindow .logo {
+    direction: ltr !important;
+}
+
+/* 19. Laser Stats Section (clientsSection) */
+.laser-stats-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.laser-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+.laser-background svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: multiply;
+}
+
+.mobile-svg {
+    display: none;
+}
+
+.laser-beam, .laser-beam-m {
+    stroke-dasharray: 1400 2200;
+    animation: drawBeam 9s linear infinite;
+}
+
+.b-1, .b-1-m {
+    animation-delay: 0s;
+    animation-duration: 9s;
+}
+
+.b-2, .b-2-m {
+    animation-delay: -4.5s;
+    animation-duration: 11s;
+    stroke-dasharray: 1600 2000;
+}
+
+@keyframes drawBeam {
+    from { stroke-dashoffset: 3800; }
+    to   { stroke-dashoffset: -3800; }
+}
+
+.stat-block {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    color: #1a1a1a;
+    font-family: inherit;
+}
+
+.stat-top {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.stat-left {
+    top: 45%;
+    left: 20%;
+    transform: translateY(-50%);
+}
+
+.stat-right {
+    bottom: 15%;
+    right: 20%;
+}
+
+.stat-number {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 5px;
+    color: #155B51;
+    text-shadow: 0 2px 8px rgba(21, 91, 81, 0.2);
+}
+
+.stat-text {
+    font-size: 1rem;
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* RTL Support */
+body.lang-ar .stat-left {
+    left: auto;
+    right: 20%;
+}
+body.lang-ar .stat-right {
+    right: auto;
+    left: 20%;
+}
+body.lang-ar .laser-background {
+    transform: scaleX(-1);
+}
+
+@media (max-width: 768px) {
+    .laser-stats-container {
+        height: auto;
+        flex-direction: column;
+        padding: 60px 0;
+        gap: 60px;
+    }
+    .stat-block {
+        position: static;
+        transform: none !important;
+    }
+    .laser-background {
+        opacity: 0.5;
+    }
+    .desktop-svg {
+        display: none;
+    }
+    .mobile-svg {
+        display: block;
+    }
+}
+
+/* 20. About Us Section styling */
+.about-us-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto 80px auto;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.about-us-container .about-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #B8FF00;
+}
+
+.about-us-container .about-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #aebfd5;
+}
+
+body.lang-ar .about-us-container .about-desc {
+    font-family: 'Cairo', sans-serif;
+    font-size: 20px;
+}
+
+
+/* =============================================================
+   LIGHT THEME OVERRIDES (Tasks 2â€“5)
+   All dark muffin.css rules are overridden here.
+   DO NOT MODIFY muffin.css directly.
+   ============================================================= */
+
+/* â”€â”€ Task 2: Remove All Grey/Dark Section Backgrounds â”€â”€â”€â”€â”€â”€â”€â”€ */
+body,
+html,
+#fullpage,
+.fp-section,
+.fp-slide {
+    background: #ffffff !important;
+}
+
+.sliderSection,
+.whySection,
+.clientsSection,
+.websitesSection,
+.premiumSection,
+.teamSection,
+.contactSection,
+.section {
+    background: #ffffff !important;
+    filter: none !important;
+}
+
+/* Kill the dark gradient transitions that caused grey boxes */
+.sliderSection,
+.premiumSection {
+    background: #ffffff !important;
+    background-image: none !important;
+}
+
+.wrapper,
+.inner {
+    background: transparent !important;
+}
+
+/* â”€â”€ Task 3: Text Colors â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.sliderSection h1, .sliderSection h2, .sliderSection h3,
+.sliderSection p, .sliderSection span, .sliderSection li,
+.whySection h1, .whySection h2, .whySection h3,
+.whySection p, .whySection .title, .whySection span,
+.clientsSection h1, .clientsSection h2, .clientsSection p,
+.websitesSection h1, .websitesSection h2, .websitesSection h3,
+.websitesSection p, .websitesSection span,
+.premiumSection h1, .premiumSection h2, .premiumSection h3,
+.premiumSection p, .premiumSection span,
+.teamSection h1, .teamSection h2, .teamSection h3,
+.teamSection p, .teamSection span,
+.contactSection h1, .contactSection h2, .contactSection p,
+.contactSection span {
+    color: #1a1a1a !important;
+}
+
+.subTitle,
+.description,
+.stat-text,
+.caption {
+    color: #555555 !important;
+}
+
+/* Big stat numbers â€” brand green */
+.stat-number,
+.counter,
+.number {
+    color: #155B51 !important;
+}
+
+/* Stat block override */
+.stat-block {
+    color: #1a1a1a !important;
+}
+
+.stat-block .stat-text {
+    color: #555555 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Global link colors */
+a {
+    color: #155B51;
+}
+a:hover {
+    color: #1d7a6a;
+}
+
+/* â”€â”€ Task 4: Sidebar Glassmorphism â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.sidebar {
+    background: rgba(255, 255, 255, 0.65) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border-right: none !important;
+}
+
+/* LTR â€” brand green border on right, RTL â€” on left */
+body:not(.lang-ar) .sidebar {
+    border-right: 3px solid rgba(21, 91, 81, 0.25) !important;
+}
+body.lang-ar .sidebar {
+    border-left: 3px solid rgba(21, 91, 81, 0.25) !important;
+}
+
+.sidebar .nav a,
+.sidebar .nav li a,
+.sidebar a {
+    color: #1a1a1a !important;
+}
+.sidebar .nav li.active a,
+.sidebar .nav a:hover {
+    color: #155B51 !important;
+}
+.sidebar .nav li.active::before,
+.sidebar .nav li.active .dot,
+.sidebar .nav li .dot.active {
+    background: #155B51 !important;
+    border-color: #155B51 !important;
+}
+.sidebar .scrollDown,
+.sidebar .scrollUp {
+    color: #1a1a1a !important;
+}
+.lang-toggle-btn {
+    background: rgba(21, 91, 81, 0.1) !important;
+    color: #155B51 !important;
+    border: 1px solid rgba(21, 91, 81, 0.3) !important;
+}
+.lang-toggle-btn:hover {
+    background: #155B51 !important;
+    color: #ffffff !important;
+}
+/* Hamburger & mobile menu */
+.hamburger a svg line {
+    stroke: #1a1a1a !important;
+}
+.hamburger:hover {
+    background: rgba(21, 91, 81, 0.1) !important;
+}
+.hamburger:hover a svg line {
+    stroke: #155B51 !important;
+}
+.menuMobilePopup {
+    background: #f8f8f8 !important;
+}
+.menuMobilePopup a,
+.menuMobilePopup li a {
+    color: #1a1a1a !important;
+}
+.menuMobilePopup li a:hover {
+    color: #155B51 !important;
+}
+
+/* â”€â”€ Task 5: Buttons, Cards, Form Inputs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.button a,
+.btn,
+.button,
+button[type="submit"] {
+    background: #155B51 !important;
+    color: #ffffff !important;
+    border-color: #155B51 !important;
+}
+.button a:hover,
+.btn:hover,
+.button:hover {
+    background: #1d7a6a !important;
+    border-color: #1d7a6a !important;
+}
+.button.outline a,
+.btn-outline {
+    background: transparent !important;
+    color: #155B51 !important;
+    border: 2px solid #155B51 !important;
+}
+hr, .divider, .separator {
+    border-color: #e0e0e0 !important;
+}
+.iconBlock,
+.pluginItem,
+.card {
+    background: #f5f5f5 !important;
+    border: 1px solid #e0e0e0 !important;
+    color: #1a1a1a !important;
+}
+/* FullPage nav dots */
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    background: #155B51 !important;
+}
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a span {
+    background: #155B51 !important;
+    border: 2px solid #155B51 !important;
+}
+/* Contact form inputs */
+input,
+textarea,
+select {
+    background: #f5f5f5 !important;
+    border: 1px solid #e0e0e0 !important;
+    color: #1a1a1a !important;
+}
+input:focus,
+textarea:focus {
+    border-color: #155B51 !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(21, 91, 81, 0.15) !important;
+}
+
+/* â”€â”€ Task 7: About Us Section â€” Light Theme â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.about-us-container .about-title {
+    color: #155B51 !important;
+}
+.about-us-container .about-desc {
+    color: #555555 !important;
+}
