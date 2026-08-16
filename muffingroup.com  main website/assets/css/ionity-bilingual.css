@@ -93,13 +93,13 @@ body.lang-ar p {
 
     /* Desktop Headings & Content Alignments */
     body.lang-ar .muffinSlider .muffinSlide .headline {
-        text-align: right;
+        text-align: center;
         direction: rtl;
     }
 
     body.lang-ar .muffinSlider .muffinSlide .headline .button,
     body.lang-ar .muffinSlider .muffinSlide .headline .btn-wrapper {
-        text-align: right;
+        text-align: center;
     }
 
     /* Websites section desktop RTL */
@@ -535,7 +535,7 @@ body.lang-ar .contactSection .column .text p {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 450px;
+    height: 460px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -556,7 +556,6 @@ body.lang-ar .contactSection .column .text p {
     left: 0;
     width: 100%;
     height: 100%;
-    mix-blend-mode: multiply;
 }
 
 .mobile-svg {
@@ -569,26 +568,28 @@ body.lang-ar .contactSection .column .text p {
 }
 
 .b-1, .b-1-m {
+    stroke: #35EDCA !important;
     animation-delay: 0s;
     animation-duration: 9s;
 }
 
 .b-2, .b-2-m {
+    stroke: #BBFFF2 !important;
     animation-delay: -4.5s;
     animation-duration: 11s;
     stroke-dasharray: 1600 2000;
 }
 
 @keyframes drawBeam {
-    from { stroke-dashoffset: 3800; }
-    to   { stroke-dashoffset: -3800; }
+    from { stroke-dashoffset: 4200; }
+    to   { stroke-dashoffset: -4200; }
 }
 
 .stat-block {
     position: absolute;
     z-index: 2;
     text-align: center;
-    color: #1a1a1a;
+    color: #ffffff;
     font-family: inherit;
 }
 
@@ -613,14 +614,14 @@ body.lang-ar .contactSection .column .text p {
     font-size: 5rem;
     font-weight: 700;
     line-height: 1;
-    margin-bottom: 5px;
-    color: #155B51;
-    text-shadow: 0 2px 8px rgba(21, 91, 81, 0.2);
+    margin-bottom: 6px;
+    color: #ffffff !important;
 }
 
 .stat-text {
-    font-size: 1rem;
-    color: #555555;
+    font-size: 1.05rem;
+    color: #BBFFF2 !important;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -642,15 +643,15 @@ body.lang-ar .laser-background {
     .laser-stats-container {
         height: auto;
         flex-direction: column;
-        padding: 60px 0;
-        gap: 60px;
+        padding: 50px 0;
+        gap: 50px;
     }
     .stat-block {
         position: static;
         transform: none !important;
     }
-    .laser-background {
-        opacity: 0.5;
+    .stat-number {
+        font-size: 3.8rem;
     }
     .desktop-svg {
         display: none;
@@ -660,290 +661,7 @@ body.lang-ar .laser-background {
     }
 }
 
-/* 20. About Us Section styling */
-.about-us-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 40px auto 80px auto;
-    text-align: center;
-    color: #fff;
-    position: relative;
-    z-index: 2;
-    padding: 0 20px;
-}
-
-.about-us-container .about-title {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #B8FF00;
-}
-
-.about-us-container .about-desc {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #aebfd5;
-}
-
-body.lang-ar .about-us-container .about-desc {
-    font-family: 'Cairo', sans-serif;
-    font-size: 20px;
-}
-
-/* =============================================================
-   LIGHT WARM THEME — Full Color System Override
-   Palette: Background #f7f5f2 | Surface #eeecea | Brand #155B51
-   DO NOT MODIFY muffin.css directly.
-   ============================================================= */
-
-/* ── 1. Universal Background Reset ─────────────────────────── */
-body,
-html,
-#fullpage,
-.fp-section,
-.fp-slide,
-.sliderSection,
-.whySection,
-.clientsSection,
-.websitesSection,
-.premiumSection,
-.teamSection,
-.contactSection,
-.whoSection,
-.section,
-.wrapper,
-.muffin {
-    background: #f7f5f2 !important;
-    background-image: none !important;
-    filter: none !important;
-    color: #1e1e1e !important;
-}
-
-/* Transparent wrappers */
-.inner,
-.fp-tableCell {
-    background: transparent !important;
-}
-
-/* ── 2. whoSection (Team Section) Fix ──────────────────────── */
-.whoSection {
-    background: #f7f5f2 !important;
-}
-.whoSection h2,
-.whoSection .columns .leftColumn .rowContainer .desc,
-.whoSection .columns .rightColumn .rowContainer .desc,
-.whoSection .team .column .role,
-.whoSection .team .column .name {
-    color: #1e1e1e !important;
-}
-.whoSection .team .column .columnContainer img {
-    filter: grayscale(20%) !important;
-    border-radius: 50%;
-}
-/* Team photos on dark SVG circles — make them light */
-.whoSection .team .column .columnContainer svg circle,
-.whoSection .team .column .columnContainer svg ellipse {
-    fill: #e8e4df !important;
-    stroke: #ddd9d4 !important;
-}
-.whoSection .team .column .columnContainer svg path {
-    stroke: #155B51 !important;
-}
-
-/* ── 3. Text Colors ────────────────────────────────────────── */
-.sliderSection h1, .sliderSection h2, .sliderSection h3,
-.sliderSection p, .sliderSection span, .sliderSection li,
-.whySection h1, .whySection h2, .whySection h3,
-.whySection p, .whySection .title, .whySection span,
-.clientsSection h1, .clientsSection h2, .clientsSection p,
-.websitesSection h1, .websitesSection h2, .websitesSection h3,
-.websitesSection p, .websitesSection span,
-.premiumSection h1, .premiumSection h2, .premiumSection h3,
-.premiumSection p, .premiumSection span,
-.teamSection h1, .teamSection h2, .teamSection h3,
-.teamSection p, .teamSection span,
-.contactSection h1, .contactSection h2, .contactSection p,
-.contactSection span {
-    color: #1a1a1a !important;
-}
-
-.subTitle,
-.description,
-.stat-text,
-.caption {
-    color: #555555 !important;
-}
-
-/* Big stat numbers â€” brand green */
-.stat-number,
-.counter,
-.number {
-    color: #155B51 !important;
-}
-
-/* Stat block override */
-.stat-block {
-    color: #1a1a1a !important;
-}
-
-.stat-block .stat-text {
-    color: #555555 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Global link colors */
-a {
-    color: #155B51;
-}
-a:hover {
-    color: #1d7a6a;
-}
-
-/* â”€â”€ Task 4: Sidebar Glassmorphism â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-.sidebar {
-    background: rgba(255, 255, 255, 0.65) !important;
-    backdrop-filter: blur(14px) !important;
-    -webkit-backdrop-filter: blur(14px) !important;
-    border-right: none !important;
-}
-
-/* LTR â€” brand green border on right, RTL â€” on left */
-body:not(.lang-ar) .sidebar {
-    border-right: 3px solid rgba(21, 91, 81, 0.25) !important;
-}
-body.lang-ar .sidebar {
-    border-left: 3px solid rgba(21, 91, 81, 0.25) !important;
-}
-
-.sidebar .nav a,
-.sidebar .nav li a,
-.sidebar a {
-    color: #1a1a1a !important;
-}
-.sidebar .nav li.active a,
-.sidebar .nav a:hover {
-    color: #155B51 !important;
-}
-.sidebar .nav li.active::before,
-.sidebar .nav li.active .dot,
-.sidebar .nav li .dot.active {
-    background: #155B51 !important;
-    border-color: #155B51 !important;
-}
-.sidebar .scrollDown,
-.sidebar .scrollUp {
-    color: #1a1a1a !important;
-}
-.lang-toggle-btn {
-    background: rgba(21, 91, 81, 0.1) !important;
-    color: #155B51 !important;
-    border: 1px solid rgba(21, 91, 81, 0.3) !important;
-}
-.lang-toggle-btn:hover {
-    background: #155B51 !important;
-    color: #ffffff !important;
-}
-/* Hamburger & mobile menu */
-.hamburger a svg line {
-    stroke: #1a1a1a !important;
-}
-.hamburger:hover {
-    background: rgba(21, 91, 81, 0.1) !important;
-}
-.hamburger:hover a svg line {
-    stroke: #155B51 !important;
-}
-.menuMobilePopup {
-    background: #eeecea !important;
-}
-.menuMobilePopup a,
-.menuMobilePopup li a {
-    color: #1a1a1a !important;
-}
-.menuMobilePopup li a:hover {
-    color: #155B51 !important;
-}
-
-/* â”€â”€ Task 5: Buttons, Cards, Form Inputs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-.button a,
-.btn,
-.button,
-button[type="submit"] {
-    background: #155B51 !important;
-    color: #ffffff !important;
-    border-color: #155B51 !important;
-}
-.button a:hover,
-.btn:hover,
-.button:hover {
-    background: #1d7a6a !important;
-    border-color: #1d7a6a !important;
-}
-.button.outline a,
-.btn-outline {
-    background: transparent !important;
-    color: #155B51 !important;
-    border: 2px solid #155B51 !important;
-}
-hr, .divider, .separator {
-    border-color: #e0e0e0 !important;
-}
-.iconBlock,
-.pluginItem,
-.card {
-    background: #eeecea !important;
-    border: 1px solid #ddd9d4 !important;
-    color: #1e1e1e !important;
-}
-/* FullPage nav dots */
-#fp-nav ul li a span,
-.fp-slidesNav ul li a span {
-    background: #155B51 !important;
-}
-#fp-nav ul li a.active span,
-#fp-nav ul li:hover a span {
-    background: #155B51 !important;
-    border: 2px solid #155B51 !important;
-}
-/* Contact form inputs */
-input,
-textarea,
-select {
-    background: #eeecea !important;
-    border: 1px solid #ddd9d4 !important;
-    color: #1e1e1e !important;
-}
-input:focus,
-textarea:focus {
-    border-color: #155B51 !important;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(21, 91, 81, 0.15) !important;
-}
-
-/* ── Laser Animation Enhanced ───────────────────────────────── */
-.laser-beam, .laser-beam-m {
-    stroke-dasharray: 1200 2400;
-    animation: drawBeam 8.5s linear infinite;
-}
-
-.b-1, .b-1-m {
-    animation-delay: 0s;
-    animation-duration: 8.5s;
-}
-
-.b-2, .b-2-m {
-    animation-delay: -4.25s;
-    animation-duration: 10.5s;
-    stroke-dasharray: 1400 2200;
-}
-
-@keyframes drawBeam {
-    from { stroke-dashoffset: 4600; }
-    to   { stroke-dashoffset: -4600; }
-}
-
-/* ── About Us Section & Team Members Grid ───────────────────── */
+/* 20. About Us Section & Team Members Grid */
 .about-us-container {
     width: 100%;
     max-width: 900px;
@@ -951,20 +669,26 @@ textarea:focus {
     text-align: center;
     position: relative;
     z-index: 2;
+    padding: 0 20px;
 }
 
 .about-us-container .about-title {
-    color: #155B51 !important;
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 15px;
+    color: #35EDCA !important;
 }
 
 .about-us-container .about-desc {
-    color: #444444 !important;
     font-size: 1.1rem;
-    line-height: 1.7;
+    line-height: 1.8;
+    color: #e0f2ef !important;
     margin-bottom: 30px;
+}
+
+body.lang-ar .about-us-container .about-desc {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    font-size: 1.2rem;
 }
 
 .about-team-grid {
@@ -981,42 +705,34 @@ textarea:focus {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.3s ease;
     cursor: pointer;
 }
 
 .team-member-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
 }
 
 .team-member-card .member-photo {
-    width: 85px;
-    height: 85px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     background-size: cover !important;
     background-position: center top !important;
     background-repeat: no-repeat !important;
-    border: 3px solid rgba(21, 91, 81, 0.3);
-    box-shadow: 0 4px 14px rgba(21, 91, 81, 0.15);
+    border: 2px solid #35EDCA;
     transition: all 0.3s ease;
     overflow: hidden;
-    /* Fallback if background-image fails */
     display: block;
-    min-width: 85px;
-    min-height: 85px;
-}
-
-.team-member-card:hover .member-photo {
-    border-color: #155B51;
-    box-shadow: 0 8px 20px rgba(21, 91, 81, 0.25);
-    transform: scale(1.05);
+    min-width: 80px;
+    min-height: 80px;
 }
 
 .team-member-card .member-name {
     margin-top: 8px;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #222222 !important;
+    color: #ffffff !important;
     letter-spacing: 0.5px;
 }
 
@@ -1025,57 +741,390 @@ textarea:focus {
         gap: 14px;
     }
     .team-member-card .member-photo {
-        width: 60px;
-        height: 60px;
+        width: 65px;
+        height: 65px;
+        min-width: 65px;
+        min-height: 65px;
     }
     .team-member-card .member-name {
         font-size: 0.8rem;
     }
 }
 
-/* ── Contact Section & Footer Text Overrides (Fix Hidden White Text) ── */
+/* =============================================================
+   IONITY CLEAN #155B51 BRAND THEME (Original Structure Preserved)
+   ============================================================= */
+
+/* ── 1. Universal Background & Surfaces ────────────────────── */
+body,
+html,
+#fullpage,
+.fp-section,
+.fp-slide,
+.sliderSection,
+.whySection,
+.clientsSection,
+.websitesSection,
+.premiumSection,
+.teamSection,
+.contactSection,
+.whoSection,
+.section,
+.wrapper,
+.muffin {
+    background: #155B51 !important;
+    background-image: none !important;
+    filter: none !important;
+    color: #ffffff !important;
+}
+
+.inner,
+.fp-tableCell {
+    background: transparent !important;
+}
+
+/* ── 2. Clean Typography & Colors ──────────────────────────── */
+h1, h2, h3, h4, h5, h6,
+.sliderSection h1, .sliderSection h2, .sliderSection h3,
+.whySection h1, .whySection h2, .whySection h3, .whySection .title,
+.clientsSection h1, .clientsSection h2,
+.websitesSection h1, .websitesSection h2, .websitesSection h3, .websitesSection .title,
+.premiumSection h1, .premiumSection h2, .premiumSection h3,
+.contactSection h1, .contactSection h2 {
+    color: #ffffff !important;
+}
+
+p,
+.subTitle,
+.description,
+.caption,
+.sliderSection p,
+.whySection p,
+.clientsSection p,
+.websitesSection p,
+.premiumSection p,
+.contactSection p {
+    color: #d6ebe7 !important;
+}
+
+/* Why section icons & items */
+.whySection .icons .iconRow .circle {
+    position: relative !important;
+    width: 100px !important;
+    height: 100px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+.whySection .icons .iconRow .circle svg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100px !important;
+    height: 100px !important;
+    z-index: 1 !important;
+}
+.whySection .icons .iconRow .circle img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100px !important;
+    height: 100px !important;
+    z-index: 2 !important;
+    opacity: 1 !important;
+}
+.whySection .whyColumnCenter .icons .iconRow .circle svg circle {
+    fill: #0e3d36 !important;
+    stroke: #35EDCA !important;
+    stroke-width: 2px !important;
+    stroke-dashoffset: 0 !important;
+}
+.whySection .whyColumnCenter .icons .iconRow .title {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+}
+#bigCirclesSvg path,
+.whySection .leftSvg svg path {
+    stroke: rgba(53, 237, 202, 0.2) !important;
+    stroke-dashoffset: 0 !important;
+}
+
+/* Big number graphics */
+.counter,
+.number,
+.websitesSection .number h2 {
+    color: #35EDCA !important;
+}
+.websitesSection .number svg path {
+    stroke: #35EDCA !important;
+}
+
+/* ── 3. Original Button Design with Clean Brand Colors ─────── */
+.sliderSection .button a,
+.websitesSection .content .button a,
+.contactSection .button a,
+.btn-wrapper a,
+.btn-primary,
+.btn {
+    display: inline-block !important;
+    position: relative !important;
+    background: #35EDCA !important;
+    color: #111111 !important;
+    padding: 15px 32px 14px 20px !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    border-radius: 30px !important;
+    border: none !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+}
+
+body.lang-ar .sliderSection .button a,
+body.lang-ar .websitesSection .content .button a,
+body.lang-ar .contactSection .button a,
+body.lang-ar .btn-wrapper a,
+body.lang-ar .btn-primary,
+body.lang-ar .btn {
+    padding: 15px 20px 14px 32px !important;
+}
+
+.sliderSection .button a:hover,
+.websitesSection .content .button a:hover,
+.contactSection .button a:hover,
+.btn-wrapper a:hover,
+.btn-primary:hover,
+.btn:hover {
+    background: #ffffff !important;
+    color: #155B51 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.sliderSection .button a span,
+.websitesSection .content .button a span,
+.contactSection .button a span,
+.btn-wrapper a span,
+.btn span {
+    position: absolute !important;
+    top: 18px !important;
+    right: 20px !important;
+    width: 16px !important;
+    transition: all 0.25s ease !important;
+}
+
+body.lang-ar .sliderSection .button a span,
+body.lang-ar .websitesSection .content .button a span,
+body.lang-ar .contactSection .button a span,
+body.lang-ar .btn-wrapper a span,
+body.lang-ar .btn span {
+    right: auto !important;
+    left: 20px !important;
+    transform: scaleX(-1);
+}
+
+.sliderSection .button a:hover span,
+.websitesSection .content .button a:hover span,
+.contactSection .button a:hover span,
+.btn-wrapper a:hover span,
+.btn:hover span {
+    right: 14px !important;
+}
+
+body.lang-ar .sliderSection .button a:hover span,
+body.lang-ar .websitesSection .content .button a:hover span,
+body.lang-ar .contactSection .button a:hover span,
+body.lang-ar .btn-wrapper a:hover span,
+body.lang-ar .btn:hover span {
+    left: 14px !important;
+    right: auto !important;
+    transform: scaleX(-1);
+}
+
+/* Ensure Sidebar & Mobile Menu Links are clean & transparent */
+.sidebar .button,
+.sidebar #menu li,
+.sidebar #menu li a,
+.sidebar .menuContainer ul li,
+.sidebar .menuContainer ul li a,
+.menuMobilePopup li,
+.menuMobilePopup li a {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: auto !important;
+}
+
+/* ── 4. Cards & Plugin Items (Original Flat/Clean Look) ────── */
+.iconBlock,
+.pluginItem,
+.card,
+.premiumSection .items .item .itemContainer {
+    background: #0e3d36 !important;
+    border: 1px solid rgba(53, 237, 202, 0.15) !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    transition: background 0.3s ease, border-color 0.3s ease !important;
+}
+
+.premiumSection .items .item .itemContainer:hover {
+    background: #114941 !important;
+    border-color: #35EDCA !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.premiumSection .items .item .itemContainer .title {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+.premiumSection .items .item .itemContainer .desc {
+    color: #d6ebe7 !important;
+}
+
+/* ── 5. Sidebar Navigation (Original Clean Style) ──────────── */
+.sidebar {
+    background: #0e3d36 !important;
+    border-right: none !important;
+}
+
+body:not(.lang-ar) .sidebar {
+    border-right: 2px solid rgba(53, 237, 202, 0.2) !important;
+}
+body.lang-ar .sidebar {
+    border-left: 2px solid rgba(53, 237, 202, 0.2) !important;
+}
+
+.sidebar .nav a,
+.sidebar .nav li a,
+.sidebar a,
+.sidebar #menu .menuMiddle .menuContainer ul li a {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+.sidebar .nav li.active a,
+.sidebar .nav a:hover,
+.sidebar #menu .menuMiddle .menuContainer ul li.active a,
+.sidebar #menu .menuMiddle .menuContainer ul li a:hover {
+    color: #35EDCA !important;
+}
+
+.sidebar .nav li.active::before,
+.sidebar .nav li.active .dot,
+.sidebar .nav li .dot.active,
+.sidebar #menu .menuMiddle .menuContainer ul li.active a .circle {
+    background: #35EDCA !important;
+    border-color: #35EDCA !important;
+    box-shadow: none !important;
+}
+
+.sidebar .scrollDown,
+.sidebar .scrollUp {
+    color: #d6ebe7 !important;
+}
+
+.lang-toggle-btn {
+    background: #0e3d36 !important;
+    color: #35EDCA !important;
+    border: 1px solid #35EDCA !important;
+    border-radius: 20px !important;
+}
+.lang-toggle-btn:hover {
+    background: #35EDCA !important;
+    color: #111111 !important;
+}
+
+/* Hamburger & Mobile Menu */
+.hamburger a svg line {
+    stroke: #ffffff !important;
+}
+.hamburger:hover a svg line {
+    stroke: #35EDCA !important;
+}
+.menuMobilePopup {
+    background: #0e3d36 !important;
+}
+.menuMobilePopup a,
+.menuMobilePopup li a {
+    color: #ffffff !important;
+}
+.menuMobilePopup li a:hover {
+    color: #35EDCA !important;
+}
+
+/* FullPage nav dots */
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    background: #35EDCA !important;
+}
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a span {
+    background: #35EDCA !important;
+    border: 2px solid #ffffff !important;
+}
+
+/* ── 6. Contact Section & Form Inputs ──────────────────────── */
 .contactSection,
 .contactSection .wrapper,
 .contactSection .columns {
-    color: #1a1a1a !important;
+    color: #ffffff !important;
 }
 
 .contactSection h2 {
-    color: #155B51 !important;
+    color: #35EDCA !important;
 }
 
 .contactSection .columns .column .title,
 .contactSection .columns .column .title div {
-    color: #1a1a1a !important;
+    color: #ffffff !important;
     font-weight: 700;
 }
 
 .contactSection .links {
-    padding: 100px 0 60px !important;
+    padding: 80px 0 40px !important;
 }
 
 .contactSection .links .column a {
-    color: #1a1a1a !important;
-    font-weight: 600 !important;
+    color: #d6ebe7 !important;
+    font-weight: 500 !important;
     font-size: 16px !important;
     transition: color 0.2s ease;
 }
 
 .contactSection .links .column a:hover {
-    color: #155B51 !important;
+    color: #35EDCA !important;
 }
 
 .contactSection .copyright {
-    color: #555555 !important;
+    color: #a8d5ce !important;
     font-size: 14px !important;
     font-weight: 400 !important;
     padding-bottom: 40px !important;
 }
 
 .contactSection .copyright a {
-    color: #155B51 !important;
+    color: #35EDCA !important;
 }
 
 .contactSection .copyright a:hover {
-    color: #1d7a6a !important;
+    color: #ffffff !important;
 }
+
+input,
+textarea,
+select {
+    background: #0e3d36 !important;
+    border: 1px solid rgba(53, 237, 202, 0.25) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+}
+input:focus,
+textarea:focus {
+    border-color: #35EDCA !important;
+    outline: none;
+}
+

@@ -9,11 +9,10 @@ window.IONITY_STRINGS = {
     ar: {
         /* Navigation Links */
         navHome: 'الرئيسية',
-        navCura: 'Cura',
-        navHaggag: 'Haggag',
-        navSolutions: 'الحلول المخصصة',
-        navAbout: 'من نحن',
-        navHowWeWork: 'طريقة عملنا',
+        navWhy: 'خدماتنا',
+        navClients: 'من نحن وإحصائياتنا',
+        navWebsites: 'الحلول الجاهزة',
+        navPremium: 'أدوات متطورة',
         navContact: 'تواصل معنا',
 
         /* Scroll Controls */
@@ -98,11 +97,10 @@ window.IONITY_STRINGS = {
     en: {
         /* Navigation Links */
         navHome: 'Home',
-        navCura: 'Cura',
-        navHaggag: 'Haggag',
-        navSolutions: 'Custom Solutions',
-        navAbout: 'About Us',
-        navHowWeWork: 'How We Work',
+        navWhy: 'Services',
+        navClients: 'About Us & Stats',
+        navWebsites: 'Ready Solutions',
+        navPremium: 'Advanced Tools',
         navContact: 'Contact Us',
 
         /* Scroll Controls */

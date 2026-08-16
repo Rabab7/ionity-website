@@ -9,7 +9,7 @@
 (function () {
     'use strict';
 
-    var navKeys = ['navHome', 'navCura', 'navHaggag', 'navSolutions', 'navAbout', 'navHowWeWork', 'navContact'];
+    var navKeys = ['navHome', 'navWhy', 'navClients', 'navWebsites', 'navPremium', 'navContact'];
 
     var pluginDescKeys = [
         'pluginRevSliderDesc',

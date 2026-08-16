@@ -20,7 +20,7 @@ $(document).ready(function() {
         autoScrolling: false,
         fitToSection: false,
         menu: '#menu',
-        anchors: ['homePage', 'whyPage', 'clientsPage', 'websitesPage', 'premiumPage', 'whoPage', 'contactPage'],
+        anchors: ['homePage', 'whyPage', 'clientsPage', 'websitesPage', 'premiumPage', 'contactPage'],
         onLeave: function(index, nextIndex, direction) {
             if (index == 1 && direction == 'down') {
                 $('.hamburger').addClass("active");
