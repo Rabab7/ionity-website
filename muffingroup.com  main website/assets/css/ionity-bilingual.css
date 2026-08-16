@@ -849,14 +849,70 @@ p,
     stroke-dashoffset: 0 !important;
 }
 
+/* Background Outline Giant SVG Text behind stats & headings */
+.bg-outline-text-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    max-width: 950px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.22;
+}
+
+.bg-outline-svg {
+    width: 100%;
+    height: auto;
+}
+
+.bg-outline-svg path,
+.websitesSection .number svg path,
+.contactSection .column .title svg path {
+    stroke: #35EDCA !important;
+    stroke-width: 2.2px !important;
+    fill: none !important;
+    stroke-dashoffset: 0 !important;
+}
+
+.websitesSection .number svg {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+.contactSection .column .title {
+    position: relative;
+}
+
+.contactSection .column .title svg {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    max-width: 450px;
+    z-index: 0;
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+.contactSection .column .title div {
+    position: relative;
+    z-index: 1;
+}
+
 /* Big number graphics */
 .counter,
 .number,
 .websitesSection .number h2 {
     color: #35EDCA !important;
-}
-.websitesSection .number svg path {
-    stroke: #35EDCA !important;
+    position: relative;
+    z-index: 1;
 }
 
 /* ── 3. Original Button Design with Clean Brand Colors ─────── */
