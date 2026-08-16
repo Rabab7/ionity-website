@@ -833,30 +833,6 @@ p,
     stroke-width: 2px !important;
 }
 
-.whySection .whyColumnCenter svg .circle1 {
-    stroke-dasharray: 304, 304 !important;
-    stroke-dashoffset: 304 !important;
-    transition: stroke-dashoffset 0.6s ease 0.2s !important;
-}
-
-.whySection .whyColumnCenter svg .circle2 {
-    stroke-dasharray: 304, 304 !important;
-    stroke-dashoffset: 304 !important;
-    transition: stroke-dashoffset 0.6s ease 0.35s !important;
-}
-
-.whySection .whyColumnCenter svg .circle3 {
-    stroke-dasharray: 304, 304 !important;
-    stroke-dashoffset: 304 !important;
-    transition: stroke-dashoffset 0.6s ease 0.5s !important;
-}
-
-.whySection .whyColumnCenter svg .circle4 {
-    stroke-dasharray: 304, 304 !important;
-    stroke-dashoffset: 304 !important;
-    transition: stroke-dashoffset 0.6s ease 0.65s !important;
-}
-
 .whySection .icons .iconRow .circle img {
     position: absolute !important;
     top: 0 !important;
@@ -864,56 +840,21 @@ p,
     width: 100px !important;
     height: 100px !important;
     z-index: 2 !important;
-    opacity: 0 !important;
-    transition: opacity 0.4s ease 0.4s !important;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.whySection .leftSvg svg .lineBig {
-    stroke: rgba(53, 237, 202, 0.4) !important;
-    stroke-width: 2px !important;
-    fill: none !important;
-    stroke-dasharray: 2434, 2434 !important;
-    stroke-dashoffset: 2434 !important;
-    transition: stroke-dashoffset 1.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
-}
-
+.whySection .leftSvg svg .lineBig,
 .whySection .leftSvg svg .lineMedium {
     stroke: rgba(53, 237, 202, 0.4) !important;
     stroke-width: 2px !important;
     fill: none !important;
-    stroke-dasharray: 1826, 1826 !important;
-    stroke-dashoffset: 1826 !important;
-    transition: stroke-dashoffset 1.6s cubic-bezier(0.25, 1, 0.5, 1) 0.3s !important;
 }
 
 .whySection .whyColumnCenter .icons .iconRow .title {
     color: #ffffff !important;
     font-weight: 600 !important;
     font-size: 1.1rem !important;
-}
-
-/* WhySection Active / In-View Trigger */
-body.fp-viewing-whyPage .whySection .whyTable .whyColumnCenter svg .circle1,
-body.fp-viewing-whyPage .whySection .whyTable .whyColumnCenter svg .circle2,
-body.fp-viewing-whyPage .whySection .whyTable .whyColumnCenter svg .circle3,
-body.fp-viewing-whyPage .whySection .whyTable .whyColumnCenter svg .circle4,
-.whySection.is-inview .whyTable .whyColumnCenter svg .circle1,
-.whySection.is-inview .whyTable .whyColumnCenter svg .circle2,
-.whySection.is-inview .whyTable .whyColumnCenter svg .circle3,
-.whySection.is-inview .whyTable .whyColumnCenter svg .circle4 {
-    stroke-dashoffset: 0 !important;
-}
-
-body.fp-viewing-whyPage .whySection .leftSvg svg .lineBig,
-body.fp-viewing-whyPage .whySection .leftSvg svg .lineMedium,
-.whySection.is-inview .leftSvg svg .lineBig,
-.whySection.is-inview .leftSvg svg .lineMedium {
-    stroke-dashoffset: 0 !important;
-}
-
-body.fp-viewing-whyPage .whySection .icons .iconRow .circle img,
-.whySection.is-inview .icons .iconRow .circle img {
-    opacity: 1 !important;
 }
 
 /* 2. ClientsSection (250 000) Giant Outline Text */
@@ -938,29 +879,6 @@ body.fp-viewing-whyPage .whySection .icons .iconRow .circle img,
     stroke: #35EDCA !important;
     stroke-width: 2.2px !important;
     fill: none !important;
-    transition: stroke-dashoffset 1.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
-}
-
-.bg-outline-svg .number2 {
-    stroke-dasharray: 570, 570 !important;
-    stroke-dashoffset: 570 !important;
-}
-
-.bg-outline-svg .number5 {
-    stroke-dasharray: 870, 870 !important;
-    stroke-dashoffset: 870 !important;
-    transition-delay: 0.3s !important;
-}
-
-.bg-outline-svg .number0 {
-    stroke-dasharray: 568, 568 !important;
-    stroke-dashoffset: 568 !important;
-    transition-delay: 0.5s !important;
-}
-
-body.fp-viewing-clientsPage .bg-outline-svg path,
-.clientsSection.is-inview .bg-outline-svg path {
-    stroke-dashoffset: 0 !important;
 }
 
 /* 3. WebsitesSection (650+) Giant Outline Text */
@@ -978,35 +896,6 @@ body.fp-viewing-clientsPage .bg-outline-svg path,
     stroke: #35EDCA !important;
     stroke-width: 2.2px !important;
     fill: none !important;
-    transition: stroke-dashoffset 1.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
-}
-
-.websitesSection .number svg .number6 {
-    stroke-dasharray: 638, 638 !important;
-    stroke-dashoffset: 638 !important;
-}
-
-.websitesSection .number svg .number5 {
-    stroke-dasharray: 870, 870 !important;
-    stroke-dashoffset: 870 !important;
-    transition-delay: 0.3s !important;
-}
-
-.websitesSection .number svg .number0 {
-    stroke-dasharray: 568, 568 !important;
-    stroke-dashoffset: 568 !important;
-    transition-delay: 0.6s !important;
-}
-
-.websitesSection .number svg .numberPlus {
-    stroke-dasharray: 638, 638 !important;
-    stroke-dashoffset: 638 !important;
-    transition-delay: 0.9s !important;
-}
-
-body.fp-viewing-websitesPage .websitesSection .number svg path,
-.websitesSection.is-inview .number svg path {
-    stroke-dashoffset: 0 !important;
 }
 
 /* 4. ContactSection (Support & Contact) Giant Outline Text */
@@ -1029,12 +918,6 @@ body.fp-viewing-websitesPage .websitesSection .number svg path,
     stroke: #35EDCA !important;
     stroke-width: 2px !important;
     fill: none !important;
-    transition: stroke-dashoffset 1.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
-}
-
-body.fp-viewing-contactPage .contactSection .column .title svg path,
-.contactSection.is-inview .column .title svg path {
-    stroke-dashoffset: 0 !important;
 }
 
 .contactSection .column .title div {
