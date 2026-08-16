@@ -115,8 +115,8 @@ $(document).ready(function() {
         });
     }
 
-    // Fail-safe Scroll Listener for all browsers & devices
-    $(window).on('scroll resize', function() {
+    // Fail-safe Scroll & Touch Listener for all browsers & devices
+    $(window).on('scroll resize touchmove touchend', function() {
         var winTop = $(window).scrollTop();
         var winBottom = winTop + $(window).height();
 
@@ -131,7 +131,7 @@ $(document).ready(function() {
         });
     });
 
-    /* 4. Smooth Scrolling (Local Nav) */
+    /* 5. Smooth Scrolling (Local Nav) */
     var body = $("html, body");
 
     $('.scrollDown a').click(function() {
@@ -145,7 +145,7 @@ $(document).ready(function() {
         return false;
     });
 
-    /* 5. Sliders Initialization */
+    /* 6. Sliders Initialization */
     if ($('.muffinSlider').length && typeof $.fn.slick === 'function') {
         var muffinSlider = $('.muffinSlider').slick({
             infinite: true,
@@ -177,21 +177,19 @@ $(document).ready(function() {
         $('.goTo5Slide').click(function() { muffinSlider.slick('slickGoTo', 4); });
     }
 
-    /* 6. Mobile Menu */
+    /* 7. Mobile Menu */
     $(".hamburger").click(function() {
-        $(".menuMobilePopup").show(0);
-        $(".menuMobilePopup").animate({
-            "opacity": 1
-        }, 0);
-        $(".menuMobilePopupWindow").delay(0).addClass("show");
+        $(".menuMobilePopup").css('display', 'table').hide().fadeIn(200);
+        setTimeout(function() {
+            $(".menuMobilePopupWindow").addClass("show");
+        }, 50);
     });
 
-    $(".menuMobilePopup a").click(function() {
+    $(".menuMobilePopupClose, .menuMobilePopup a").click(function() {
         $(".menuMobilePopupWindow").removeClass("show");
-        $(".menuMobilePopup").delay(200).animate({
-            "opacity": 0
-        }, 200);
-        $(".menuMobilePopup").delay(200).hide(0);
+        setTimeout(function() {
+            $(".menuMobilePopup").fadeOut(200);
+        }, 150);
     });
 
 });

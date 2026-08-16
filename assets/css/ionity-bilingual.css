@@ -1203,3 +1203,332 @@ textarea:focus {
     outline: none;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   AUDIO TOGGLE BUTTON
+   ═══════════════════════════════════════════════════════════════ */
+.audio-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: rgba(14, 61, 54, 0.7);
+    border: 1px solid rgba(53, 237, 202, 0.35);
+    color: #35EDCA;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    backdrop-filter: blur(8px);
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+[dir="rtl"] .audio-toggle-btn {
+    margin-right: 0;
+    margin-left: 12px;
+}
+
+.audio-toggle-btn:hover {
+    background: rgba(53, 237, 202, 0.15);
+    border-color: #35EDCA;
+    color: #ffffff;
+}
+
+.audio-toggle-btn.muted {
+    opacity: 0.6;
+    color: #a8d5ce;
+    border-color: rgba(168, 213, 206, 0.3);
+}
+
+.audio-toggle-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    transition: transform 0.2s ease;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE POPUP MENU (3D ROTATEX MODAL)
+   ═══════════════════════════════════════════════════════════════ */
+.menuMobilePopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+    background: rgba(10, 35, 31, 0.95);
+    backdrop-filter: blur(12px);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menuMobilePopup .menuMobilePopupContainer {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.menuMobilePopup .menuMobilePopupMiddle {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+}
+
+.menuMobilePopup .mobileHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.menuMobilePopup .mobileHeader .logo {
+    font-weight: 800;
+    font-size: 22px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.menuMobilePopup .mobileHeader .menuMobilePopupClose {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(53, 237, 202, 0.1);
+    border: 1px solid rgba(53, 237, 202, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menuMobilePopup .mobileHeader .menuMobilePopupClose:hover {
+    background: #35EDCA;
+}
+
+.menuMobilePopup .mobileHeader .menuMobilePopupClose svg line {
+    stroke: #35EDCA;
+    stroke-width: 2.5;
+    transition: stroke 0.2s ease;
+}
+
+.menuMobilePopup .mobileHeader .menuMobilePopupClose:hover svg line {
+    stroke: #0e3d36;
+}
+
+.menuMobilePopup .menuMobilePopupWindow {
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    background: #0e3d36;
+    border: 1px solid rgba(53, 237, 202, 0.25);
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transform: rotateX(-70deg);
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.menuMobilePopup .menuMobilePopupWindow.show {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+.menuMobilePopup .menuMobilePopupWindow ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.menuMobilePopup .menuMobilePopupWindow ul li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(53, 237, 202, 0.1);
+}
+
+.menuMobilePopup .menuMobilePopupWindow ul li:last-child {
+    border-bottom: none;
+}
+
+.menuMobilePopup .menuMobilePopupWindow ul li a {
+    display: block;
+    padding: 14px 0;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.menuMobilePopup .menuMobilePopupWindow ul li a:hover {
+    color: #35EDCA;
+    transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE & MOBILE WHYSECTION ARC POSITIONING (< 768px)
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    /* General Spacing */
+    .section,
+    .sliderSection,
+    .whySection,
+    .clientsSection,
+    .websitesSection,
+    .premiumSection,
+    .contactSection {
+        padding-top: 50px !important;
+        padding-bottom: 40px !important;
+    }
+
+    h1 {
+        font-size: 26px !important;
+        line-height: 36px !important;
+    }
+
+    h2 {
+        font-size: 24px !important;
+        line-height: 34px !important;
+    }
+
+    /* Why Section Mobile Arc Layout */
+    .whySection {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+        overflow: hidden !important;
+    }
+
+    .whySection .whyTable {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    .whySection .whyTable .whyColumnLeft {
+        display: block !important;
+        width: auto !important;
+        text-align: center !important;
+        padding: 20px 15px 10px 15px !important;
+    }
+
+    .whySection .whyTable .whyColumnLeft h2 {
+        text-align: center !important;
+        font-size: 24px !important;
+        line-height: 34px !important;
+    }
+
+    .whySection .whyTable .whyColumnLeft h2 br {
+        display: none !important;
+    }
+
+    .whySection .whyTable .whyColumnCenter {
+        display: block !important;
+        width: auto !important;
+        padding-top: 30px !important;
+    }
+
+    .whySection .icons {
+        display: block !important;
+        margin: 0 auto !important;
+        max-width: 340px !important;
+        position: relative !important;
+    }
+
+    .whySection .icons .iconRow {
+        display: flex !important;
+        align-items: center !important;
+        padding: 8px 0 !important;
+        margin: 0 !important;
+    }
+
+    .whySection .icons .iconRow .circle {
+        width: 60px !important;
+        height: 60px !important;
+        min-width: 60px !important;
+        flex-shrink: 0 !important;
+    }
+
+    .whySection .icons .iconRow .circle svg {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .whySection .icons .iconRow .circle img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .whySection .icons .iconRow .title {
+        font-size: 13.5px !important;
+        line-height: 18px !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+        text-align: start !important;
+    }
+
+    /* Staggered offsets to sit exactly on the curved arc */
+    .whySection .icons .iconRow:nth-child(1) {
+        padding-left: 30px !important;
+        padding-right: 0 !important;
+    }
+
+    .whySection .icons .iconRow:nth-child(2) {
+        padding-left: 70px !important;
+        padding-right: 0 !important;
+    }
+
+    .whySection .icons .iconRow:nth-child(3) {
+        padding-left: 70px !important;
+        padding-right: 0 !important;
+    }
+
+    .whySection .icons .iconRow:nth-child(4) {
+        padding-left: 30px !important;
+        padding-right: 0 !important;
+    }
+
+    [dir="rtl"] .whySection .icons .iconRow:nth-child(1) {
+        padding-right: 30px !important;
+        padding-left: 0 !important;
+    }
+
+    [dir="rtl"] .whySection .icons .iconRow:nth-child(2) {
+        padding-right: 70px !important;
+        padding-left: 0 !important;
+    }
+
+    [dir="rtl"] .whySection .icons .iconRow:nth-child(3) {
+        padding-right: 70px !important;
+        padding-left: 0 !important;
+    }
+
+    [dir="rtl"] .whySection .icons .iconRow:nth-child(4) {
+        padding-right: 30px !important;
+        padding-left: 0 !important;
+    }
+
+    /* Position the SVG line arc to fit mobile */
+    .whySection .leftSvg {
+        top: 100px !important;
+        left: -10px !important;
+        display: block !important;
+        opacity: 0.6 !important;
+    }
+
+    [dir="rtl"] .whySection .leftSvg {
+        left: auto !important;
+        right: -10px !important;
+        transform: scaleX(-1) !important;
+    }
+
+    .whySection .leftSvg svg {
+        width: 190px !important;
+        height: auto !important;
+    }
+}
+
