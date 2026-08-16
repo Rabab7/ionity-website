@@ -767,51 +767,51 @@ html,
 .websitesSection,
 .premiumSection,
 .teamSection,
-/* ── 1. Authentic Dimensional Dark Teal Gradient System ─── */
+/* ── 1. Soft & Elegant Eye-Comfort Dark Teal Gradient System ─── */
 html, body {
-    background: #091a17 !important;
+    background: #0c2420 !important;
     color: #ffffff !important;
 }
 
 .muffin {
-    background: #091a17 !important;
+    background: #0c2420 !important;
     color: #ffffff !important;
 }
 
-/* Gradients on full .section containers to eliminate any gaps or bars */
+/* Subtle, smooth, eye-friendly transitions across full .section containers */
 .section[data-anchor="homePage"],
 .section:nth-of-type(1) {
-    background: linear-gradient(180deg, #091a17 0%, #0d2a25 60%, #124039 100%) !important;
+    background: linear-gradient(180deg, #0c2420 0%, #0f2c27 60%, #123730 100%) !important;
 }
 
 .section[data-anchor="whyPage"],
 .section:nth-of-type(2) {
-    background: linear-gradient(180deg, #124039 0%, #155B51 60%, #0e332d 100%) !important;
+    background: linear-gradient(180deg, #123730 0%, #15453d 60%, #11352f 100%) !important;
     position: relative;
     overflow: hidden;
 }
 
 .section[data-anchor="clientsPage"],
 .section:nth-of-type(3) {
-    background: linear-gradient(180deg, #0e332d 0%, #155B51 45%, #0a221e 100%) !important;
+    background: linear-gradient(180deg, #11352f 0%, #14423a 50%, #0e2d27 100%) !important;
     position: relative;
 }
 
 .section[data-anchor="websitesPage"],
 .section:nth-of-type(4) {
-    background: linear-gradient(180deg, #0a221e 0%, #103b34 50%, #081d1a 100%) !important;
+    background: linear-gradient(180deg, #0e2d27 0%, #123831 50%, #0d2722 100%) !important;
     position: relative;
 }
 
 .section[data-anchor="premiumPage"],
 .section:nth-of-type(5) {
-    background: linear-gradient(180deg, #081d1a 0%, #144941 50%, #0a201c 100%) !important;
+    background: linear-gradient(180deg, #0d2722 0%, #144038 50%, #0c2420 100%) !important;
     position: relative;
 }
 
 .section[data-anchor="contactPage"],
 .section:nth-of-type(6) {
-    background: linear-gradient(180deg, #0a201c 0%, #061512 100%) !important;
+    background: linear-gradient(180deg, #0c2420 0%, #091c19 100%) !important;
     position: relative;
 }
 
@@ -862,6 +862,13 @@ p,
     pointer-events: none;
 }
 
+[dir="rtl"] .whySection .leftSvg,
+body.lang-ar .whySection .leftSvg {
+    left: auto !important;
+    right: 0 !important;
+    transform: scaleX(-1) !important;
+}
+
 .whySection .leftSvg svg {
     overflow: visible !important;
 }
@@ -870,7 +877,7 @@ p,
     stroke: #35EDCA !important;
     stroke-width: 2.5px !important;
     fill: none !important;
-    opacity: 0.9 !important;
+    opacity: 0.85 !important;
 }
 
 .whySection .icons .iconRow .circle {
