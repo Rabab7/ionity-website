@@ -767,19 +767,51 @@ html,
 .websitesSection,
 .premiumSection,
 .teamSection,
-.contactSection,
-.whoSection,
-.section,
-.wrapper,
-.muffin {
-    background: #155B51 !important;
-    background-image: none !important;
-    filter: none !important;
+/* ── 1. Authentic Dimensional Dark Teal Gradient System ─── */
+html, body {
+    background: #091a17 !important;
     color: #ffffff !important;
 }
 
+.muffin {
+    background: #091a17 !important;
+    color: #ffffff !important;
+}
+
+.sliderSection {
+    background: linear-gradient(180deg, #091a17 0%, #0d2a25 60%, #124039 100%) !important;
+}
+
+.whySection {
+    background: linear-gradient(180deg, #124039 0%, #155B51 60%, #0e332d 100%) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.clientsSection {
+    background: linear-gradient(180deg, #0e332d 0%, #155B51 45%, #0a221e 100%) !important;
+    position: relative;
+}
+
+.websitesSection {
+    background: linear-gradient(180deg, #0a221e 0%, #103b34 50%, #081d1a 100%) !important;
+    position: relative;
+}
+
+.premiumSection {
+    background: linear-gradient(180deg, #081d1a 0%, #144941 50%, #0a201c 100%) !important;
+    position: relative;
+}
+
+.contactSection {
+    background: linear-gradient(180deg, #0a201c 0%, #061512 100%) !important;
+    position: relative;
+}
+
+.wrapper,
 .inner,
-.fp-tableCell {
+.fp-tableCell,
+.section {
     background: transparent !important;
 }
 
@@ -810,6 +842,25 @@ p,
 /* ── Authentic SVG Animations (WhySection, Numbers, & Outline Text) ── */
 
 /* 1. WhySection circles & lines */
+.whySection .leftSvg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.whySection .leftSvg svg {
+    overflow: visible !important;
+}
+
+.whySection .leftSvg svg path {
+    stroke: #35EDCA !important;
+    stroke-width: 2.5px !important;
+    fill: none !important;
+    opacity: 0.9 !important;
+}
+
 .whySection .icons .iconRow .circle {
     position: relative !important;
     width: 100px !important;
