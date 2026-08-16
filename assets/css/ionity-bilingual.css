@@ -778,40 +778,52 @@ html, body {
     color: #ffffff !important;
 }
 
-.sliderSection {
+/* Gradients on full .section containers to eliminate any gaps or bars */
+.section[data-anchor="homePage"],
+.section:nth-of-type(1) {
     background: linear-gradient(180deg, #091a17 0%, #0d2a25 60%, #124039 100%) !important;
 }
 
-.whySection {
+.section[data-anchor="whyPage"],
+.section:nth-of-type(2) {
     background: linear-gradient(180deg, #124039 0%, #155B51 60%, #0e332d 100%) !important;
     position: relative;
     overflow: hidden;
 }
 
-.clientsSection {
+.section[data-anchor="clientsPage"],
+.section:nth-of-type(3) {
     background: linear-gradient(180deg, #0e332d 0%, #155B51 45%, #0a221e 100%) !important;
     position: relative;
 }
 
-.websitesSection {
+.section[data-anchor="websitesPage"],
+.section:nth-of-type(4) {
     background: linear-gradient(180deg, #0a221e 0%, #103b34 50%, #081d1a 100%) !important;
     position: relative;
 }
 
-.premiumSection {
+.section[data-anchor="premiumPage"],
+.section:nth-of-type(5) {
     background: linear-gradient(180deg, #081d1a 0%, #144941 50%, #0a201c 100%) !important;
     position: relative;
 }
 
-.contactSection {
+.section[data-anchor="contactPage"],
+.section:nth-of-type(6) {
     background: linear-gradient(180deg, #0a201c 0%, #061512 100%) !important;
     position: relative;
 }
 
+.sliderSection,
+.whySection,
+.clientsSection,
+.websitesSection,
+.premiumSection,
+.contactSection,
 .wrapper,
 .inner,
-.fp-tableCell,
-.section {
+.fp-tableCell {
     background: transparent !important;
 }
 
