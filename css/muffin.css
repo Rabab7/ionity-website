@@ -4173,3 +4173,201 @@ iframe.likeMuffin {
     z-index: 100;
     width: 130px;
 }
+
+/* Custom Slider Styles */
+.slider-section {
+    margin-right: 280px; /* المسافة المتروكة لعرض الـ Sidebar */
+    width: 50% !important; /* يأخذ نصف عرض الشاشة */
+    max-width: 650px; /* حد أقصى للعرض عشان ما يمتدش زيادة */
+    box-sizing: border-box;
+    padding: 30px 20px;
+}
+
+.muffin-slider {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.slider-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    gap: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 15px;
+}
+
+.nav-column {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+
+.nav-column.active {
+    opacity: 1;
+}
+
+.nav-column .number {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.nav-column .name {
+    font-size: 0.95rem;
+}
+
+.preloader {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.nav-column.active .progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #007bff;
+    animation: slideProgress 5s linear forwards;
+}
+
+@keyframes slideProgress {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+.slides-container {
+    position: relative;
+    min-height: 450px;
+}
+
+.muffin-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.5s ease-in-out;
+}
+
+.muffin-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.muffin-slide .headline h1 {
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+
+
+.btn-wrapper {
+    margin-top: 30px;
+}
+
+.slide-image {
+    max-width: 220px; /* التحكم في أقصى عرض للصورة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 180px; /* تصغير ارتفاع الصورة */
+    object-fit: contain;
+}
+
+
+
+/* 1. إعطاء مساحة ثابتة للـ Sidebar وتفريغ مكان للسكشن */
+.slider-section {
+    position: relative !important;
+    margin-right: 320px !important; /* مسافة أمان لعرض القائمة الجانبية */
+    width: 45% !important;          /* ياخد نص العرض تقريباً بجانب القائمة */
+    max-width: 550px !important;
+    padding: 40px 20px !important;
+    box-sizing: border-box !important;
+    left: auto !important;
+}
+
+/* 2. ترتيب المحتوى داخل السلايدر (الكلام على اليمين والصورة على الشمال) */
+.muffin-slide {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+}
+
+/* 3. تصغير النصوص لتناسب المساحة */
+.muffin-slide .headline h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 15px !important;
+}
+
+/* 4. تصغير الصور جداً وزبط أبعادها */
+.slide-image {
+    flex-shrink: 0 !important;
+    width: 140px !important; /* حجم الصورة صغير وملموم */
+}
+
+.slide-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 130px !important;
+    object-fit: contain !important;
+}
+
+/* 5. تصغير شريط التنقل (Navigation) فوق السلايدر */
+.slider-navigation {
+    gap: 10px !important;
+    margin-bottom: 25px !important;
+}
+
+.nav-column .name {
+    font-size: 0.8rem !important;
+}
+
+/* للشاشات الصغيره والموبايل */
+@media (max-width: 991px) {
+    .slider-section {
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+@media (max-width: 768px) {
+    .muffin-slide {
+        flex-direction: column;
+        text-align: center;
+    }
+    .slider-navigation {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+}
+
+/* للتجاوب مع الشاشات الصغيرة */
+@media (max-width: 991px) {
+    .slider-section {
+        margin-right: 0;
+        width: 100% !important;
+        max-width: 100%;
+    }
+}
