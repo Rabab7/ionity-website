@@ -427,8 +427,8 @@ $(document).ready(function () {
 /* 7. Preloader Hide on Load */
 $(window).on("load", function () {
   setTimeout(function () {
-    $(".preloaderWindow").fadeOut(400, function () {
+    $(".preloaderWindow").fadeOut(200, function () {
       $(this).remove(); // إزالة العنصر بعد الانتهاء لعدم استهلاك ذاكرة المتصفح
     });
-  }, 500);
+  }, 200);
 });
