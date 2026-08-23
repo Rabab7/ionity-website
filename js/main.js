@@ -276,27 +276,34 @@ $(document).ready(function () {
   /* ==========================================
        7. Mobile Glassmorphic Navigation Menu
        ========================================== */
-  // فتح القائمة
+ // فتح القائمة المنسدلة عند الضغط على أي زر هامبرجر أو أيقونة
   $(document).on("click", ".hamburger, .hamburger-btn", function (e) {
     e.preventDefault();
+    e.stopPropagation();
     $(".menuMobilePopup").addClass("active");
-    $("body").css("overflow", "hidden");
+    $("body").addClass("menu-open").css("overflow", "hidden");
   });
 
-  // إغلاق القائمة
-  $(document).on(
-    "click",
-    ".menuMobilePopupClose, .close-btn, .menuMobilePopupContent .menu-links",
-    function () {
-      $(".menuMobilePopup").removeClass("active");
-      $("body").css("overflow", "");
-    },
-  );
+  // إغلاق القائمة عند الضغط على زر الإغلاق أو أي رابط
+  $(document).on("click", ".menuMobilePopupClose, .close-btn, .menu-links", function (e) {
+    $(".menuMobilePopup").removeClass("active");
+    $("body").removeClass("menu-open").css("overflow", "");
+  });
 
-  // تحديث الخيار النشط (Active Class) عند الضغط على الروابط
-  $(".menu-links").on("click", function () {
-    $(".menu-links").parent().removeClass("active");
-    $(this).parent().addClass("active");
+  // إغلاق القائمة عند الضغط على الـ Overlay الخارجي
+  $(document).on("click", ".menuMobilePopup", function (e) {
+    if ($(e.target).hasClass("menuMobilePopup")) {
+      $(".menuMobilePopup").removeClass("active");
+      $("body").removeClass("menu-open").css("overflow", "");
+    }
+  });
+
+  // ربط التنقل بالسلايد أو السكشن المناسب
+  $(document).on("click", ".menu-links", function (e) {
+    var anchor = $(this).attr("menuanchor") || $(this).attr("href").replace("#", "");
+    if (typeof $.fn.fullpage !== "undefined" && $.fn.fullpage.moveTo) {
+      $.fn.fullpage.moveTo(anchor);
+    }
   });
 
   /* ==========================================
@@ -390,31 +397,31 @@ $(document).ready(function () {
     }
   });
 
-// solution section for floating elements in the websites section
+  // solution section for floating elements in the websites section
   document.addEventListener("DOMContentLoaded", function () {
     const section = document.querySelector(".websitesSection");
     const floatContent = document.querySelector(".float-element-up");
     const floatPhoto = document.querySelector(".float-element-down");
 
     if (section && floatContent && floatPhoto) {
-        section.addEventListener("mousemove", function (e) {
-            const { clientX, clientY } = e;
-            const xPos = (clientX / window.innerWidth - 0.5) * 20;
-            const yPos = (clientY / window.innerHeight - 0.5) * 20;
+      section.addEventListener("mousemove", function (e) {
+        const { clientX, clientY } = e;
+        const xPos = (clientX / window.innerWidth - 0.5) * 20;
+        const yPos = (clientY / window.innerHeight - 0.5) * 20;
 
-            // تحريك العناصر عكس اتجاه حركة الماوس لإعطاء عمق بصري (Depth)
-            floatContent.style.transform = `translate3d(${-xPos}px, ${-yPos}px, 0)`;
-            floatPhoto.style.transform = `translate3d(${xPos * 1.5}px, ${yPos * 1.5}px, 0)`;
-        });
+        // تحريك العناصر عكس اتجاه حركة الماوس لإعطاء عمق بصري (Depth)
+        floatContent.style.transform = `translate3d(${-xPos}px, ${-yPos}px, 0)`;
+        floatPhoto.style.transform = `translate3d(${xPos * 1.5}px, ${yPos * 1.5}px, 0)`;
+      });
 
-        section.addEventListener("mouseleave", function () {
-            floatContent.style.transform = "translate3d(0, 0, 0)";
-            floatPhoto.style.transform = "translate3d(0, 0, 0)";
-            floatContent.style.transition = "transform 0.5s ease-out";
-            floatPhoto.style.transition = "transform 0.5s ease-out";
-        });
+      section.addEventListener("mouseleave", function () {
+        floatContent.style.transform = "translate3d(0, 0, 0)";
+        floatPhoto.style.transform = "translate3d(0, 0, 0)";
+        floatContent.style.transition = "transform 0.5s ease-out";
+        floatPhoto.style.transition = "transform 0.5s ease-out";
+      });
     }
-});
+  });
 });
 
 /* 7. Preloader Hide on Load */
