@@ -1105,8 +1105,7 @@ body.lang-ar .btn:hover span {
 /* ── 4. Cards & Plugin Items (Original Flat/Clean Look) ────── */
 .iconBlock,
 .pluginItem,
-.card,
-.premiumSection .items .item .itemContainer {
+.card {
     background: #0e3d36 !important;
     border: 1px solid rgba(53, 237, 202, 0.15) !important;
     border-radius: 12px !important;
@@ -1115,20 +1114,8 @@ body.lang-ar .btn:hover span {
     transition: background 0.3s ease, border-color 0.3s ease !important;
 }
 
-.premiumSection .items .item .itemContainer:hover {
-    background: #114941 !important;
-    border-color: #35EDCA !important;
-    transform: none !important;
-    box-shadow: none !important;
-}
 
-.premiumSection .items .item .itemContainer .title {
-    color: #ffffff !important;
-    font-weight: 700 !important;
-}
-.premiumSection .items .item .itemContainer .desc {
-    color: #d6ebe7 !important;
-}
+
 
 /* ── 5. Sidebar Navigation (Original Clean Style) ──────────── */
 .sidebar {

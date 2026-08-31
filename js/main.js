@@ -276,7 +276,7 @@ $(document).ready(function () {
   /* ==========================================
        7. Mobile Glassmorphic Navigation Menu
        ========================================== */
- // فتح القائمة المنسدلة عند الضغط على أي زر هامبرجر أو أيقونة
+  // فتح القائمة المنسدلة عند الضغط على أي زر هامبرجر أو أيقونة
   $(document).on("click", ".hamburger, .hamburger-btn", function (e) {
     e.preventDefault();
     e.stopPropagation();
@@ -285,10 +285,14 @@ $(document).ready(function () {
   });
 
   // إغلاق القائمة عند الضغط على زر الإغلاق أو أي رابط
-  $(document).on("click", ".menuMobilePopupClose, .close-btn, .menu-links", function (e) {
-    $(".menuMobilePopup").removeClass("active");
-    $("body").removeClass("menu-open").css("overflow", "");
-  });
+  $(document).on(
+    "click",
+    ".menuMobilePopupClose, .close-btn, .menu-links",
+    function (e) {
+      $(".menuMobilePopup").removeClass("active");
+      $("body").removeClass("menu-open").css("overflow", "");
+    },
+  );
 
   // إغلاق القائمة عند الضغط على الـ Overlay الخارجي
   $(document).on("click", ".menuMobilePopup", function (e) {
@@ -300,7 +304,8 @@ $(document).ready(function () {
 
   // ربط التنقل بالسلايد أو السكشن المناسب
   $(document).on("click", ".menu-links", function (e) {
-    var anchor = $(this).attr("menuanchor") || $(this).attr("href").replace("#", "");
+    var anchor =
+      $(this).attr("menuanchor") || $(this).attr("href").replace("#", "");
     if (typeof $.fn.fullpage !== "undefined" && $.fn.fullpage.moveTo) {
       $.fn.fullpage.moveTo(anchor);
     }
@@ -351,50 +356,44 @@ $(document).ready(function () {
     updatePageLanguage(currentLang);
   });
 
-  /* ==========================================
-   Hero Slider with Auto-Progress Logic
-   ========================================== */
-  var slideDuration = 5000; // زمن كل شريحة بالمللي ثانية (5 ثوانٍ)
+  // ==========================================
+  // Hero Slider - Unified Single Tab Logic
+  // ==========================================
+  var slideDuration = 5000; // 5 ثوانٍ
   var currentIndex = 0;
   var totalSlides = $(".home-slide").length;
-  var slideTimer = null;
 
   function goToSlide(index) {
     currentIndex = index;
 
-    // 1. تحديث حالة أزرار التنقل (Navigation Tabs)
+    // 1. إعادة ضبط كافة أشرطة التحميل وإعادة تعيين الحالات
     $(".nav-column").removeClass("active").attr("aria-selected", "false");
+
     $(".nav-column").find(".progress-bar").stop().css("width", "0%");
 
+    // 2. تفعيل التبويب المطلوب حصراً
     var $activeNav = $('.nav-column[data-slide="' + index + '"]');
     $activeNav.addClass("active").attr("aria-selected", "true");
 
-    // 2. تبديل الشريحة النشطة (Slide Visibility)
+    // 3. تبديل الشريحة الظاهرة
     $(".home-slide").removeClass("active");
     var $activeSlide = $('.home-slide[data-index="' + index + '"]');
     $activeSlide.addClass("active");
 
-    // 3. تشغيل شريط التحميل (Progress Bar Animation)
+    // 4. تشغيل حركة شريط التحميل
     $activeNav
       .find(".progress-bar")
       .animate({ width: "100%" }, slideDuration, "linear", function () {
-        // عند الانتهاء انتقل للسلايد التالي
         var nextIndex = (currentIndex + 1) % totalSlides;
         goToSlide(nextIndex);
       });
   }
 
-  // بدء السلايدر تلقائياً
+  // بدء التشغيل التلقائي عند التحميل
   goToSlide(0);
-
-  // عند الضغط على أي تبويب في السلايدر
-  $(".nav-column").on("click", function () {
-    var targetSlide = parseInt($(this).attr("data-slide"), 10);
-    if (targetSlide !== currentIndex) {
-      // إيقاف التنازلي الحالي وبدء شريحة جديدة
-      $(".nav-column").find(".progress-bar").stop().css("width", "0%");
-      goToSlide(targetSlide);
-    }
+  $(document).on("click", ".nav-column", function () {
+    var nextIndex = (currentIndex + 1) % totalSlides;
+    goToSlide(nextIndex);
   });
 
   // solution section for floating elements in the websites section

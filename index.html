@@ -98,7 +98,7 @@
 
 </head>
 
-<body  >
+<body>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVHBN39" height="0" width="0"
@@ -254,7 +254,19 @@
     <!-- hero or home section -->
     <section id="home" class="home">
         <div class="home-slider">
+            <!-- الأشكال والأيقونات العائمة والمرحة في الخلفية -->
+            <div class="floating-elements">
+                <span class="shape shape-1"><i class="fa-solid fa-code"></i></span>
+                <span class="shape shape-2"><i class="fa-solid fa-terminal"></i></span>
+                <span class="shape shape-3"><i class="fa-solid fa-laptop-code"></i></span>
+                <span class="shape shape-4"><i class="fa-solid fa-database"></i></span>
+                <span class="shape shape-5"><i class="fa-solid fa-layer-group"></i></span>
+                <span class="shape shape-6"><i class="fa-solid fa-bug"></i></span>
+                <span class="shape shape-7"><i class="fa-solid fa-microchip"></i></span>
+                <span class="shape shape-8"><i class="fa-solid fa-network-wired"></i></span>
+            </div>
             <div class="slider">
+
 
                 <!-- Slide Navigation -->
                 <div class="slider-navigation" role="tablist" aria-label="التنقل بين شرائح الهيرو">
@@ -379,71 +391,84 @@
 
     <!-- why section -->
     <section id="whyus" class="whyus fp-auto-height" data-anchor="whyPage">
-        <div class="whySection" data-parallax='{"y": -40}'>
+        <div class="whySection">
 
-            <!-- SVG Background Accent Lines -->
-            <div class="leftSvg">
-                <svg id="bigCirclesSvg" viewBox="0 0 780 1560" enable-background="new 0 0 780 1560"
-                    xml:space="preserve">
-                    <path class="lineBig" fill="none" stroke="var(--color-accent)" stroke-width="2.5"
-                        d="M0,6c427.5,0,774,341.5,774,769S427.5,1554,0,1554" />
-                    <path class="lineMedium" fill="none" stroke="var(--color-accent)" stroke-width="2.5"
-                        stroke-miterlimit="10" d="M0,199.5c320.6,0,580.5,254.9,580.5,575.5S320.6,1360.5,0,1360.5" />
+            <!-- 1. SVG Arc (قوس دائري ثابت ومضمون من اليمين) -->
+            <div class="static-arc-container">
+                <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                    <!-- قوس ثقيل ناعم -->
+                    <path class="static-arc line-main" d="M 1000,50 A 650,450 0 0,0 1000,950" />
+                    <!-- قوس أرفع كخلفية جمالية -->
+                    <path class="static-arc line-sub" d="M 1000,120 A 550,380 0 0,0 1000,880" />
                 </svg>
             </div>
 
-            <div class="rightPhoto"></div>
+            <!-- 2. Floating Elements (تظهر فوق كل حاجة بما فيها الصورة) -->
+            <div class="floating-elements">
+                <span class="shape shape-1"><i class="fa-solid fa-code"></i></span>
+                <span class="shape shape-2"><i class="fa-solid fa-terminal"></i></span>
+                <span class="shape shape-3"><i class="fa-solid fa-microchip"></i></span>
+                <span class="shape shape-4"><i class="fa-solid fa-laptop-code"></i></span>
+                <span class="shape shape-5"><i class="fa-solid fa-brackets-curly"></i></span>
+                <span class="shape shape-6"><i class="fa-solid fa-layer-group"></i></span>
+                <span class="shape shape-7"><i class="fa-solid fa-bug"></i></span>
+                <span class="shape shape-8"><i class="fa-solid fa-network-wired"></i></span>
+            </div>
 
-            <div class="wrapper">
-                <div class="whyTable">
+            <!-- 3. Main Content Container -->
+            <div class="why-container">
+                <!-- Left Column: Title -->
+                <div class="why-title-col">
+                    <h2>ما الذي يجعلنا <br><span>الخيار الأفضل</span> <br>لمشروعك؟</h2>
+                </div>
 
-                    <!-- Section Heading -->
-                    <div class="whyColumnLeft">
-                        <h2>ما الذي يجعلنا <br><span>الخيار الأفضل</span> <br>لمشروعك؟</h2>
-                    </div>
-
-                    <!-- Dynamic Features Grid -->
-                    <div class="whyColumnCenter">
-                        <div class="icons-grid">
-
-                            <div class="iconRow icon1">
-                                <div class="circle">
-                                    <i class="fa-solid fa-headset"></i>
-                                </div>
-                                <div class="title">دعم فني <br>استثنائي</div>
-                            </div>
-
-                            <div class="iconRow icon2 middle">
-                                <div class="circle">
-                                    <i class="fa-solid fa-arrows-rotate"></i>
-                                </div>
-                                <div class="title">تحديثات <br>وتطوير مستمر</div>
-                            </div>
-
-                            <div class="iconRow icon3 middle">
-                                <div class="circle">
-                                    <i class="fa-solid fa-cubes-stacked"></i>
-                                </div>
-                                <div class="title">أكثر من 650 <br>نموذج ونظام جاهز</div>
-                            </div>
-
-                            <div class="iconRow icon4">
-                                <div class="circle">
-                                    <i class="fa-solid fa-code"></i>
-                                </div>
-                                <div class="title">برمجيات مطورة <br>داخلياً 100%</div>
-                            </div>
-
+                <!-- Center Column: Features -->
+                <div class="why-features-col">
+                    <div class="feature-item">
+                        <div class="icon-box"><i class="fa-solid fa-headset"></i></div>
+                        <div class="feature-text">
+                            <h3>دعم فني استثنائي</h3>
+                            <p>فريقنا متواجد على مدار الساعة لخدمتك</p>
                         </div>
                     </div>
 
+                    <div class="feature-item">
+                        <div class="icon-box"><i class="fa-solid fa-arrows-rotate"></i></div>
+                        <div class="feature-text">
+                            <h3>تحديثات وتطوير مستمر</h3>
+                            <p>إضافات وتحديثات دورية مجانية</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="icon-box"><i class="fa-solid fa-cubes-stacked"></i></div>
+                        <div class="feature-text">
+                            <h3>أكثر من 650 نموذج</h3>
+                            <p>تصاميم وأنظمة جاهزة للاستخدام</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+                        <div class="feature-text">
+                            <h3>برمجيات مطورة 100%</h3>
+                            <p>أكواد ناعمة وسريعة بدون تعقيد</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Media -->
+                <div class="why-media-col">
+                    <div class="curved-image-wrapper">
+                        <img src="./assets/images/whyIcons/whyPhoto.jpg" alt="Our Team">
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- abour section -->
+    <!-- about section -->
     <section id="about">
         <div class="about fp-auto-height" data-anchor="clientsPage">
             <div class="clientsSection">
@@ -605,7 +630,7 @@
                     <h2>أدوات وحلول برمجية متقدمة</h2>
                 </div>
 
-                <div class="items">
+                <div class="items ">
 
                     <div class="item">
                         <div class="itemContainer">
