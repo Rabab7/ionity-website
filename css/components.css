@@ -944,14 +944,25 @@ body {
 
 /* للشاشات الصغيره والموبايل */
 @media (max-width: 768px) {
+  .home .slider-navigation .nav-column {
+    width: auto !important; /* السماح للكارت بالنمو حسب المحتوى بدون قص */
+    max-width: 90% !important; /* حماية من الخروج عن عرض الشاشة */
+    padding: 6px 16px !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+  }
+
   .nav-column .name {
-    font-size: 0.88rem !important; /* تصغير طفيف إضافي للموبايل */
+    font-size: 0.85rem !important; /* حجم متناسق للخط */
+    white-space: normal !important; /* أمان إضافي يسمح بالالتفاف لو كان النص طويلاً جداً */
+    line-height: 1.2 !important;
   }
 
   .nav-column .number {
-    width: 28px !important;
-    height: 28px !important;
-    font-size: 0.8rem !important;
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 0.75rem !important;
+    flex-shrink: 0 !important; /* يمنع انكماش دائرة الرقم نهائياً */
   }
 }
 
